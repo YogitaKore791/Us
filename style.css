@@ -1,0 +1,7927 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #4b3530;
+}
+
+
+/* =========================================================
+   COVER PAGE
+========================================================= */
+
+body:not(.book-body) {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.7),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(253, 138, 138, 0.5),
+            transparent 25%
+        ),
+        #f8eee8;
+}
+
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.hero-content {
+    max-width: 700px;
+
+    animation: fadeIn 1.3s ease both;
+}
+
+
+.heart {
+    font-size: 4rem;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 2s infinite;
+}
+
+
+h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+
+.hero p {
+    font-size: 1.3rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    border: none;
+    border-radius: 30px;
+
+    padding: 13px 27px;
+
+    background: #a85d6a;
+    color: white;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.28s ease;
+}
+
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(90, 45, 50, 0.2);
+}
+
+
+button:disabled {
+    opacity: 0.32;
+    cursor: default;
+}
+
+
+/* =========================================================
+   ROMANTIC SCRAPBOOK BACKGROUND — FINAL
+========================================================= */
+
+.book-body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(255, 226, 231, .95) 0,
+            rgba(255, 226, 231, .45) 16%,
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 92% 18%,
+            rgba(195, 92, 108, .18) 0,
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 10% 88%,
+            rgba(255, 209, 217, .70) 0,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 91% 84%,
+            rgba(181, 88, 104, .18) 0,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f8e4e1 0%,
+            #ead1c7 48%,
+            #f5dedb 100%
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 55px 35px 80px;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* soft paper / fabric texture */
+
+.book-body {
+    background-attachment: fixed;
+}
+
+
+/* TOP DECORATIONS */
+
+.book-body::before {
+    content: "♥    💋    ♡    ✦    ♥        ♡    💌    ✦    💋    ♥";
+
+    position: fixed;
+
+    top: 4%;
+    left: 2%;
+
+    width: 96%;
+
+    color: #b65365;
+
+    font-size: 1.55rem;
+    letter-spacing: 7px;
+
+    opacity: .52;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: loveFloatTop 7s ease-in-out infinite;
+}
+
+
+/* BOTTOM DECORATIONS */
+
+.book-body::after {
+    content: "♡    ✦    💋    ♥    ♡       ✦    ♥    💋    ♡";
+
+    position: fixed;
+
+    bottom: 4%;
+    left: 4%;
+
+    width: 92%;
+
+    color: #a94e60;
+
+    font-size: 1.4rem;
+    letter-spacing: 9px;
+
+    opacity: .42;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: loveFloatBottom 8s ease-in-out infinite;
+}
+
+
+.story-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* slightly stronger shadow so the book feels like
+   a physical object sitting above the background */
+
+.book {
+    box-shadow:
+        0 30px 65px rgba(72, 39, 37, .28),
+        0 8px 20px rgba(72, 39, 37, .16);
+}
+
+
+@keyframes loveFloatTop {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes loveFloatBottom {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+/* =========================================================
+   FLOATING ROMANTIC DECORATIONS
+========================================================= */
+
+.book-body::before {
+    content: "❤️   💋   ♡   ✨   💌";
+
+    position: fixed;
+
+    top: 6%;
+    left: 3%;
+
+    width: 94%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.55rem;
+
+    opacity: .42;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatingLove 6s ease-in-out infinite;
+}
+
+
+.book-body::after {
+    content: "♡   ✨   💋   ❤️   ♡";
+
+    position: fixed;
+
+    bottom: 7%;
+    left: 4%;
+
+    width: 92%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.35rem;
+
+    opacity: .32;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatingLove 7s ease-in-out infinite reverse;
+}
+
+
+.story-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+
+@keyframes floatingLove {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(1deg);
+    }
+}
+
+/* =========================================================
+   COVER LINK
+========================================================= */
+
+.back-to-cover {
+    position: fixed;
+
+    top: 28px;
+    left: 35px;
+
+    color: #6f5951;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    z-index: 100;
+}
+
+
+.back-to-cover:hover {
+    color: #a85d6a;
+}
+
+
+/* =========================================================
+   STORY WRAPPER
+========================================================= */
+
+.story-wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   CHAPTER VISIBILITY
+========================================================= */
+
+.book-spread {
+    display: none;
+}
+
+
+.book-spread.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   OPEN BOOK
+========================================================= */
+
+.book {
+    width: min(1320px, 94vw);
+    height: 820px;
+
+    position: relative;
+
+    background: #fbf5ea;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 25px 55px rgba(60, 35, 25, 0.30),
+        0 5px 15px rgba(60, 35, 25, 0.16);
+
+    animation: bookOpen 0.6s ease both;
+}
+
+
+/* centre fold */
+
+.book::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 2px;
+
+    background: rgba(80, 50, 40, 0.13);
+
+    box-shadow:
+        0 0 14px rgba(70, 40, 30, 0.20);
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   BOOK PAGES
+========================================================= */
+
+.book-page {
+    width: 50%;
+    height: 100%;
+
+    position: relative;
+
+    padding: 50px 65px;
+
+    background: #fbf5ea;
+
+    overflow: hidden;
+}
+
+.left-page {
+    border-radius: 7px 0 0 7px;
+
+    box-shadow:
+        inset -14px 0 25px -22px rgba(60,40,30,0.6);
+}
+
+
+.right-page {
+    border-radius: 0 7px 7px 0;
+
+    box-shadow:
+        inset 14px 0 25px -22px rgba(60,40,30,0.6);
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.page-content,
+.chapter-right-content {
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+}
+
+
+.left-page .page-content {
+    animation: pageFromLeft 0.65s ease 0.1s both;
+}
+
+
+.right-page .chapter-right-content {
+    animation: pageFromRight 0.65s ease 0.15s both;
+}
+
+
+/* =========================================================
+   CHAPTER TITLES
+========================================================= */
+
+.chapter-number {
+    margin-bottom: 17px;
+
+    font-size: 0.74rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #ad606b;
+}
+
+
+.book-page h2 {
+    margin-bottom: 26px;
+
+    font-size: 2.6rem;
+
+    font-weight: normal;
+
+    line-height: 1.13;
+
+    color: #4b3530;
+}
+
+
+/* =========================================================
+   NORMAL STORY TEXT
+========================================================= */
+
+.story-text {
+    margin-bottom: 13px;
+
+    font-size: 0.98rem;
+
+    line-height: 1.58;
+
+    color: #594640;
+}
+
+
+.dramatic-text {
+    margin: 4px 0 12px;
+
+    font-size: 1.3rem;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #b45f6d;
+}
+
+
+.handwritten-note {
+    font-size: 0.98rem;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #98666a;
+
+    transform: rotate(-1deg);
+
+    animation: noteAppear 0.65s ease 0.55s both;
+}
+
+
+.center-note {
+    text-align: center;
+}
+
+
+/* =========================================================
+   MINI DIALOGUE
+========================================================= */
+
+.mini-dialogue {
+    margin: 10px 0 17px;
+
+    padding: 4px 0 4px 17px;
+
+    border-left: 3px solid #d9a3aa;
+
+    font-size: 0.91rem;
+
+    line-height: 1.65;
+
+    font-style: italic;
+
+    color: #765751;
+}
+
+
+.mini-dialogue p {
+    margin: 2px 0;
+}
+
+
+/* =========================================================
+   PORTRAIT PHOTO
+========================================================= */
+
+.scrapbook-photo {
+    position: relative;
+
+    margin: 0 auto 12px;
+
+    animation: photoDrop 0.7s ease 0.35s both;
+}
+
+
+.portrait-photo {
+    width: 205px;
+}
+
+
+.photo-placeholder-small {
+    width: 205px;
+    height: 265px;
+
+    border: 9px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 8px 18px rgba(60,40,30,0.16);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #94786e;
+
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TAPE
+========================================================= */
+
+.tape {
+    position: absolute;
+
+    top: -10px;
+
+    width: 72px;
+    height: 23px;
+
+    background: rgba(215,187,157,0.62);
+}
+
+
+.tape-left {
+    left: -22px;
+
+    transform: rotate(-11deg);
+}
+
+
+.tape-right {
+    right: -22px;
+
+    transform: rotate(11deg);
+}
+
+
+/* =========================================================
+   END OF CHAPTER
+========================================================= */
+
+.final-chapter-line {
+    margin-top: 8px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #d9c5b9;
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+
+    color: #946268;
+}
+
+
+/* =========================================================
+   PAGE NUMBERS
+========================================================= */
+
+.page-number {
+    position: absolute;
+
+    bottom: 20px;
+
+    font-size: 0.72rem;
+
+    color: #a48d82;
+}
+
+
+.left-page .page-number {
+    left: 34px;
+}
+
+
+.right-page .page-number {
+    right: 34px;
+}
+
+
+/* =========================================================
+   CHAPTER TWO
+========================================================= */
+
+.story-date {
+    margin: 10px 0 5px;
+
+    font-size: 0.75rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+
+    color: #b56370;
+}
+
+
+.message-card {
+    margin: 9px 0;
+
+    padding: 12px 15px;
+
+    border-radius: 15px 15px 15px 4px;
+
+    background: #eee5dc;
+
+    box-shadow:
+        0 4px 10px rgba(70,45,35,0.07);
+
+    font-size: 0.84rem;
+
+    line-height: 1.5;
+
+    color: #604b44;
+}
+
+
+.pink-message {
+    background: #f3dfe1;
+}
+
+
+.message-name {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 0.68rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #ad6570;
+}
+
+
+.tiny-story {
+    margin-top: 7px;
+
+    font-size: 0.84rem;
+
+    line-height: 1.5;
+
+    color: #634f48;
+}
+
+
+.little-heading {
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 1.08rem;
+
+    font-style: italic;
+
+    color: #9b6068;
+}
+
+
+.chat-photo {
+    width: 165px;
+}
+
+
+.chat-photo .photo-placeholder-small {
+    width: 165px;
+    height: 195px;
+}
+
+
+.flirty-chat {
+    width: 82%;
+
+    margin: 11px auto;
+
+    padding: 7px 14px;
+
+    border-left: 3px solid #d4a2aa;
+
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+
+    color: #664f48;
+}
+
+
+.flirty-chat p {
+    margin: 5px 0;
+}
+
+
+.flirty-chat strong {
+    color: #a85f6b;
+}
+
+
+.final-quote {
+    width: 78%;
+
+    margin: 9px auto;
+
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    background: #f5e7e4;
+
+    text-align: center;
+
+    font-size: 0.93rem;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color: #9d5c67;
+
+    transform: rotate(-1deg);
+}
+
+
+.chapter-ending {
+    margin: 8px auto 3px;
+
+    text-align: center;
+
+    font-size: 0.8rem;
+
+    line-height: 1.45;
+
+    color: #614b45;
+}
+
+
+.big-ending {
+    margin-top: 5px;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.book-navigation {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+#pageIndicator {
+    min-width: 65px;
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    color: #765f56;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+@keyframes bookOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes pageFromLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes pageFromRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes photoDrop {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-12px)
+            rotate(-2deg)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(1.5deg)
+            scale(1);
+    }
+}
+
+
+@keyframes noteAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(7px)
+            rotate(-1deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+}
+
+
+/* =========================================================
+   SMALL SCREENS
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .book-body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .book {
+        height: 620px;
+        width: 97vw;
+    }
+
+
+    .book-page {
+        padding: 35px 28px;
+    }
+
+
+    .book-page h2 {
+        font-size: 2rem;
+    }
+
+
+    .story-text {
+        font-size: 0.86rem;
+    }
+
+}
+/* =========================================================
+   CHAPTER TWO — UPDATED LAYOUT
+========================================================= */
+
+
+/* Two little chat screenshots on page 3 */
+
+.mini-photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 12px 0 8px;
+}
+
+
+.mini-screenshot {
+    width: 155px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: miniPhotoIn 0.7s ease 0.35s both;
+}
+
+
+.second-mini {
+    transform: rotate(2deg);
+
+    animation-delay: 0.5s;
+}
+
+
+.mini-photo-placeholder {
+    width: 155px;
+    height: 180px;
+
+    background: #eadccd;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 6px 14px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 0.7rem;
+    line-height: 1.45;
+
+    color: #94786e;
+}
+
+
+/* Single piece of tape */
+
+.single-tape {
+    width: 55px;
+    height: 18px;
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-4deg);
+
+    background: rgba(215, 187, 157, 0.65);
+}
+
+
+.center-text {
+    text-align: center;
+}
+
+
+/* =========================================================
+   PAGE 4 — EVERYDAY CONVERSATIONS
+========================================================= */
+
+.everyday-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 4px 0 18px;
+}
+
+
+.everyday-list span {
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    background: #f1e2df;
+
+    font-size: 0.72rem;
+
+    color: #94616a;
+}
+
+
+/* Daily chat screenshot */
+
+.daily-chat-placeholder {
+    width: 190px;
+
+    margin: 9px auto 13px;
+
+    position: relative;
+
+    transform: rotate(1.5deg);
+
+    animation: miniPhotoIn 0.7s ease 0.45s both;
+}
+
+
+.daily-chat-inner {
+    width: 190px;
+    height: 155px;
+
+    border: 7px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 6px 14px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-size: 0.7rem;
+    line-height: 1.45;
+
+    color: #94786e;
+}
+
+
+/* =========================================================
+   DENIAL 😂
+========================================================= */
+
+.denial-text {
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+    text-align: center;
+}
+
+
+.denial-line {
+    margin: 2px 0 10px;
+
+    text-align: center;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+
+    color: #b25f6c;
+}
+
+
+/* =========================================================
+   NARRATOR ENDING
+========================================================= */
+
+.narrator-ending {
+    width: 88%;
+
+    margin: 8px auto 0;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #dbc5ba;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+    line-height: 1.45;
+
+    color: #745750;
+}
+
+
+.narrator-ending strong {
+    color: #a65f69;
+}
+
+
+/* =========================================================
+   MINI PHOTO ANIMATION
+========================================================= */
+
+@keyframes miniPhotoIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            rotate(0deg)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER THREE — PAGES 5 & 6
+========================================================= */
+
+
+/* -------------------------
+   PAGE 5 — THE PLAN
+-------------------------- */
+
+.chapter3-plan {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin: 2px 0 7px;
+
+    padding: 9px 16px;
+
+    background: #f2e2df;
+
+    border-radius: 20px;
+
+    font-size: 0.88rem;
+    font-style: italic;
+
+    color: #9b5f68;
+}
+
+
+.chapter3-story {
+    margin-top: 13px;
+}
+
+
+/* -------------------------
+   MEMORY PHOTO COLLAGE
+-------------------------- */
+
+.chapter3-memory-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 15px 0 18px;
+}
+
+
+.memory-photo {
+    position: relative;
+
+    animation: memoryPhotoIn 0.75s ease both;
+}
+
+
+.memory-photo-big {
+    transform: rotate(-2deg);
+}
+
+
+.memory-photo-small {
+    transform: rotate(3deg);
+
+    animation-delay: 0.15s;
+}
+
+
+.memory-photo-inner {
+    border: 8px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 7px 16px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #94786e;
+
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+
+.memory-photo-big .memory-photo-inner {
+    width: 165px;
+    height: 165px;
+}
+
+
+.memory-photo-small .memory-photo-inner {
+    width: 135px;
+    height: 140px;
+}
+
+
+/* -------------------------
+   4 AM LINE
+-------------------------- */
+
+.chapter3-time {
+    margin-top: 4px;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+    font-style: italic;
+
+    color: #b15f6b;
+}
+
+
+/* =========================================================
+   PAGE 6 — HIS MESSAGE
+========================================================= */
+
+.chapter3-message {
+    width: 85%;
+
+    margin: 8px auto 7px;
+
+    padding: 20px 22px 15px;
+
+    position: relative;
+
+    background: #f2e4df;
+
+    border-radius: 7px;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #72534e;
+
+    box-shadow:
+        0 5px 12px rgba(70, 45, 35, 0.06);
+}
+
+
+.quote-mark {
+    position: absolute;
+
+    top: -11px;
+    left: 10px;
+
+    font-size: 3.2rem;
+
+    color: #d5a1a8;
+
+    opacity: 0.7;
+}
+
+
+.chapter3-message-name {
+    display: block;
+
+    margin-top: 7px;
+
+    text-align: right;
+
+    font-size: 0.72rem;
+    font-style: normal;
+
+    color: #a4636c;
+}
+
+
+/* -------------------------
+   HEART DIVIDER
+-------------------------- */
+
+.chapter3-divider {
+    margin: 8px 0;
+
+    text-align: center;
+
+    color: #bd7882;
+
+    font-size: 1.15rem;
+}
+
+
+/* -------------------------
+   NOTHING HAPPENED
+-------------------------- */
+
+.nothing-happened {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin: 5px 0 10px;
+}
+
+
+.nothing-happened span {
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    background: #eee5dc;
+
+    font-size: 0.7rem;
+
+    color: #765a52;
+}
+
+
+/* -------------------------
+   SAFE LINE
+-------------------------- */
+
+.safe-line {
+    width: 88%;
+
+    margin: 7px auto 12px;
+
+    padding: 11px 15px;
+
+    border-left: 3px solid #d5a1a8;
+
+    font-size: 0.88rem;
+    line-height: 1.55;
+
+    font-style: italic;
+
+    color: #76534e;
+}
+
+
+.safe-line strong {
+    color: #ad5e6a;
+}
+
+
+/* =========================================================
+   LABOUR DRESS 😂
+========================================================= */
+
+.labour-section {
+    width: 90%;
+
+    margin: 4px auto;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+
+    color: #654e48;
+}
+
+
+.labour-message {
+    margin: 7px auto;
+
+    padding: 8px 12px;
+
+    width: fit-content;
+
+    background: #f1e1de;
+
+    border-radius: 15px;
+
+    font-size: 0.8rem;
+    font-style: italic;
+
+    color: #9e6069;
+}
+
+
+/* =========================================================
+   DARLING ENDING
+========================================================= */
+
+.darling-ending {
+    width: 90%;
+
+    margin: 10px auto 0;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #dbc6bb;
+
+    text-align: center;
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    color: #745750;
+}
+
+
+.darling-ending strong {
+    color: #ad5e6a;
+
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   CHAPTER 3 PHOTO ANIMATION
+========================================================= */
+
+@keyframes memoryPhotoIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-12px)
+            rotate(0deg)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER 3 — SPACING FIX
+   Keeps content inside the same page margins
+========================================================= */
+
+#chapter3 .page-content,
+#chapter3 .chapter-right-content {
+    padding: 0;
+}
+
+
+/* Reduce the large heading gap */
+
+#chapter3 h2 {
+    margin-top: 14px;
+    margin-bottom: 28px;
+}
+
+
+/* Keep normal paragraphs tighter */
+
+#chapter3 .story-text {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+/* Plan section */
+
+#chapter3 .chapter3-plan {
+    width: fit-content;
+    margin: 5px auto 5px !important;
+    text-align: center;
+}
+
+#chapter3 .chapter3-plan {
+    width: fit-content !important;
+    display: block !important;
+
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    margin: 5px 0 5px !important;
+
+    text-align: center !important;
+}
+
+
+/* Photo collage */
+
+#chapter3 .chapter3-memory-row {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+/* 4 AM ending */
+
+#chapter3 .chapter3-time {
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    line-height: 1.35;
+}
+
+
+/* RIGHT PAGE */
+
+#chapter3 .little-heading {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+
+#chapter3 .chapter3-message {
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+
+#chapter3 .chapter3-divider {
+    margin: 7px 0;
+}
+
+
+#chapter3 .nothing-happened {
+    margin: 5px 0 8px;
+}
+
+
+#chapter3 .safe-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#chapter3 .labour-section {
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+
+#chapter3 .darling-ending {
+    margin-top: 8px;
+}
+/* =========================================================
+   CHAPTER FOUR — PAGES 7 & 8
+========================================================= */
+
+
+/* Keep Chapter 4 inside our standard page boundaries */
+
+#chapter4 .page-content,
+#chapter4 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE 7
+========================================================= */
+
+#chapter4 h2 {
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+
+/* -------------------------
+   KILLINEY MEMORY
+-------------------------- */
+
+.chapter4-memory {
+    position: relative;
+
+    min-height: 175px;
+
+    margin-bottom: 18px;
+}
+
+
+#chapter4 .story-date {
+    margin-bottom: 6px;
+}
+
+
+#chapter4 .story-text {
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+
+#chapter4 .handwritten-note {
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+
+/* Small Killiney Polaroid */
+
+.chapter4-small-photo {
+    position: absolute;
+
+    right: 15px;
+    top: 5px;
+
+    transform: rotate(3deg);
+
+    animation: chapter4PhotoIn 0.7s ease 0.2s both;
+}
+
+
+.chapter4-small-photo-inner {
+    width: 135px;
+    height: 145px;
+
+    border: 7px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 6px 14px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-size: 0.68rem;
+    line-height: 1.45;
+
+    color: #94786e;
+}
+
+
+/* =========================================================
+   TEMPLE BAR — PAGE 7
+========================================================= */
+
+.chapter4-temple {
+    padding-top: 15px;
+
+    border-top: 1px solid #ddc8bd;
+}
+
+
+.poha-line {
+    display: inline-block;
+
+    margin: 6px 0 5px;
+
+    padding: 7px 14px;
+
+    background: #f1e1de;
+
+    border-radius: 17px;
+
+    color: #9f606a;
+
+    font-size: 0.84rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PAGE 8 — TEMPLE BAR
+========================================================= */
+
+#chapter4 .little-heading {
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+
+.chapter4-temple-photo {
+    width: fit-content;
+
+    margin: 0 auto 12px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter4PhotoIn 0.75s ease 0.2s both;
+}
+
+
+.chapter4-temple-photo-inner {
+    width: 185px;
+    height: 165px;
+
+    border: 8px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 7px 16px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+
+/* -------------------------
+   FIRST GUINNESS
+-------------------------- */
+
+.first-guinness {
+    width: fit-content;
+
+    margin: 8px auto;
+
+    padding: 7px 15px;
+
+    background: #f2e2df;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: #8e5a62;
+
+    font-size: 0.82rem;
+}
+
+
+.first-guinness strong {
+    color: #ad5e6a;
+
+    font-size: 0.95rem;
+}
+
+
+.chapter4-hindsight {
+    width: 85%;
+
+    margin: 7px auto 8px;
+}
+
+
+/* -------------------------
+   DIVIDER
+-------------------------- */
+
+.chapter4-divider {
+    margin: 7px 0 8px;
+
+    text-align: center;
+
+    color: #c2878f;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   SANDYMOUNT
+========================================================= */
+
+.chapter4-sandymount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 22px;
+
+    width: 90%;
+
+    margin: 0 auto 8px;
+}
+
+
+.chapter4-beach-text {
+    flex: 1;
+}
+
+
+.chapter4-beach-text h3 {
+    margin: 2px 0 6px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.15rem;
+    font-weight: normal;
+
+    color: #5f433d;
+}
+
+
+.chapter4-beach-photo {
+    position: relative;
+
+    transform: rotate(3deg);
+
+    animation: chapter4PhotoIn 0.7s ease 0.45s both;
+}
+
+
+.chapter4-beach-photo-inner {
+    width: 125px;
+    height: 115px;
+
+    border: 7px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 6px 14px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+
+    font-size: 0.65rem;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CHAPTER 4 ENDING / CLIFFHANGER
+========================================================= */
+
+.chapter4-ending {
+    width: 90%;
+
+    margin: 9px auto 0;
+
+    padding-top: 9px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+
+.chapter4-ending p {
+    margin: 0 0 5px;
+}
+
+
+.chapter4-ending strong {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #a65f69;
+
+    font-style: italic;
+}
+
+
+.chapter4-ending span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    color: #b05f6b;
+}
+
+
+/* =========================================================
+   PHOTO ANIMATION
+========================================================= */
+
+@keyframes chapter4PhotoIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            rotate(0deg)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER FIVE — PAGES 9 & 10
+========================================================= */
+
+#chapter5 .page-content,
+#chapter5 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* -------------------------
+   STANDARD SPACING
+-------------------------- */
+
+#chapter5 h2 {
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+#chapter5 .story-text {
+    margin-top: 6px;
+    margin-bottom: 7px;
+}
+
+#chapter5 .handwritten-note {
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PARTY STATS
+========================================================= */
+
+.party-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin: 10px 0 7px;
+}
+
+.party-stats span {
+    padding: 6px 11px;
+
+    background: #f1e2df;
+
+    border-radius: 18px;
+
+    color: #925f67;
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   AWKWARD HUG
+========================================================= */
+
+.before-party {
+    margin-top: 13px;
+
+    padding-top: 11px;
+
+    border-top: 1px solid #ddc8bd;
+}
+
+#chapter5 .before-party .little-heading {
+    margin-bottom: 6px;
+}
+
+.awkward-hug {
+    width: 88%;
+
+    margin: 8px auto 11px;
+
+    padding: 10px 14px;
+
+    position: relative;
+
+    background: #f3e9df;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #73564f;
+}
+
+.awkward-hug p {
+    margin: 0 0 4px;
+
+    font-size: 0.78rem;
+}
+
+.awkward-hug small {
+    font-size: 0.68rem;
+    line-height: 1.4;
+
+    color: #9b6a69;
+}
+
+.hug-icon {
+    position: absolute;
+
+    top: -10px;
+    right: 12px;
+
+    color: #bd7882;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   FLIRTY CHAT SCREENSHOT
+========================================================= */
+
+.chapter5-chat-photo {
+    width: fit-content;
+
+    margin: 10px auto 8px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter5Drop 0.7s ease 0.25s both;
+}
+
+.chapter5-chat-inner {
+    width: 175px;
+    height: 125px;
+
+    border: 7px solid white;
+
+    background: #eadccd;
+
+    box-shadow:
+        0 6px 14px rgba(60, 40, 30, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+
+    font-size: 0.68rem;
+    line-height: 1.45;
+}
+
+
+/* -------------------------
+   END OF PARTY PAGE
+-------------------------- */
+
+.party-ending {
+    width: 90%;
+
+    margin: 11px auto 0;
+
+    padding-top: 9px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    font-size: 0.74rem;
+    line-height: 1.45;
+
+    color: #745750;
+}
+
+.party-ending p {
+    margin: 0 0 5px;
+}
+
+
+/* =========================================================
+   PAGE 10 — AIR MATTRESS
+========================================================= */
+
+#chapter5 .little-heading {
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+.air-mattress-card {
+    width: 88%;
+
+    margin: 0 auto 7px;
+
+    padding: 12px 17px;
+
+    position: relative;
+
+    background: #f1e5dc;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    color: #72564e;
+
+    font-size: 0.73rem;
+    line-height: 1.4;
+}
+
+.air-mattress-card p {
+    margin: 2px 0 5px;
+}
+
+.air-mattress-card strong {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #9e6169;
+}
+
+.air-mattress-icon {
+    position: absolute;
+
+    top: -13px;
+    right: 12px;
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   FIRST KISS
+========================================================= */
+
+.first-kiss-section {
+    width: 86%;
+
+    margin: 9px auto;
+
+    padding: 10px 0;
+
+    text-align: center;
+
+    border-top: 1px solid #decac0;
+    border-bottom: 1px solid #decac0;
+
+    color: #73564f;
+}
+
+.first-kiss-section p {
+    margin: 0 0 5px;
+
+    font-size: 0.75rem;
+}
+
+.first-kiss-section h3 {
+    margin: 3px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.45rem;
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.first-kiss-section span {
+    font-size: 0.72rem;
+
+    color: #9a6b68;
+}
+
+
+/* =========================================================
+   DRUNK CONFESSION
+========================================================= */
+
+.drunk-confession {
+    width: 88%;
+
+    margin: 7px auto;
+
+    text-align: center;
+}
+
+.drunk-confession-title {
+    margin: 0 0 5px;
+
+    font-size: 0.72rem;
+
+    color: #745750;
+}
+
+.love-line {
+    display: inline-block;
+
+    padding: 5px 15px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.05rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.confession-pause {
+    color: #aa8e85;
+
+    font-size: 0.75rem;
+}
+
+.take-it-back {
+    display: inline-block;
+
+    margin-top: 2px;
+
+    padding: 5px 13px;
+
+    background: #eee4dc;
+
+    border-radius: 15px;
+
+    color: #765a52;
+
+    font-size: 0.72rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   NEXT MORNING
+========================================================= */
+
+.next-morning {
+    width: 86%;
+
+    margin: 8px auto;
+
+    text-align: center;
+
+    font-size: 0.73rem;
+    line-height: 1.35;
+
+    color: #745750;
+}
+
+.next-morning .story-date {
+    margin-bottom: 4px;
+}
+
+.next-morning p {
+    margin: 2px 0;
+}
+
+
+/* =========================================================
+   CHAPTER ENDING
+========================================================= */
+
+.chapter5-ending {
+    width: 90%;
+
+    margin: 8px auto 0;
+
+    padding-top: 8px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    font-size: 0.72rem;
+    line-height: 1.4;
+
+    color: #745750;
+}
+
+.chapter5-ending p {
+    margin: 0 0 3px;
+}
+
+.chapter5-ending > strong {
+    color: #a65f69;
+}
+
+.chapter5-response {
+    display: block;
+
+    margin-top: 6px;
+}
+
+.fwb-line {
+    width: fit-content;
+
+    margin: 5px auto;
+
+    padding: 5px 13px;
+
+    background: #f1e1de;
+
+    border-radius: 16px;
+
+    color: #9f606a;
+
+    font-style: italic;
+}
+
+.final-joke {
+    margin-top: 5px !important;
+
+    font-style: italic;
+
+    color: #9c6a6c;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes chapter5Drop {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            rotate(0deg)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            rotate(-2deg)
+            scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER SIX — PAGES 11 & 12
+========================================================= */
+
+#chapter6 .page-content,
+#chapter6 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chapter6 h2 {
+    margin-top: 14px;
+    margin-bottom: 24px;
+}
+
+#chapter6 .story-text {
+    margin-top: 7px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PAGE 11 — FUN / COMFORT
+========================================================= */
+
+.chapter6-photo-row-big {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    margin: 24px 0 20px;
+}
+
+.chapter6-big-photo {
+    position: relative;
+    animation: chapter6PhotoIn .75s ease both;
+}
+
+.chapter6-big-photo.photo-left {
+    transform: rotate(-3deg);
+}
+
+.chapter6-big-photo.photo-right {
+    transform: rotate(3deg);
+    animation-delay: .15s;
+}
+
+.chapter6-big-photo-inner {
+    width: 155px;
+    height: 165px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .67rem;
+    line-height: 1.45;
+}
+
+.chapter6-main-line {
+    width: 88%;
+
+    margin: 15px auto 10px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 1.12rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+#chapter6 .center-note {
+    width: 90%;
+    margin: 9px auto;
+}
+
+
+/* BENEFITS */
+
+#chapter6 .benefits-list {
+    width: 86%;
+
+    margin: 18px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+#chapter6 .benefits-list span {
+    padding: 9px 6px;
+
+    background: #f2e8df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #765a52;
+    font-size: .7rem;
+    line-height: 1.4;
+
+    animation: chapter6BenefitIn .5s ease both;
+}
+
+#chapter6 .benefits-list span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+#chapter6 .benefits-list span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+#chapter6 .benefits-list strong {
+    color: #a65f69;
+}
+
+
+/* =========================================================
+   PAGE 12 — PEACE
+========================================================= */
+
+#chapter6 .little-heading {
+    margin-top: 0;
+    margin-bottom: 9px;
+}
+
+.chapter6-peace-intro {
+    margin-bottom: 15px !important;
+}
+
+
+/* HERO PHOTO */
+
+.chapter6-hero-photo {
+    width: fit-content;
+
+    margin: 12px auto 15px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter6PhotoIn .8s ease .2s both;
+}
+
+.chapter6-hero-photo-inner {
+    width: 205px;
+    height: 175px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .7rem;
+    line-height: 1.5;
+}
+
+
+/* LITTLE MEMORIES */
+
+.chapter6-simple-memories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 6px;
+
+    width: 90%;
+    margin: 5px auto 14px;
+}
+
+.chapter6-simple-memories span {
+    padding: 5px 10px;
+
+    background: #f1e2df;
+    border-radius: 16px;
+
+    color: #94616a;
+    font-size: .67rem;
+}
+
+
+/* PEACE SECTION */
+
+.chapter6-peace {
+    width: 88%;
+
+    margin: 10px auto;
+
+    padding: 12px 15px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .75rem;
+    line-height: 1.45;
+}
+
+.chapter6-peace p {
+    margin: 4px 0 7px;
+}
+
+.chapter6-peace h3 {
+    margin: 8px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ad5e6a;
+
+    animation: chapter6FeelingsIn .8s ease .4s both;
+}
+
+.chapter6-peace strong {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #a65f69;
+}
+
+
+/* SMALL PIZZA PHOTO */
+
+.chapter6-little-photo {
+    width: fit-content;
+
+    margin: 14px auto 10px;
+
+    position: relative;
+
+    transform: rotate(3deg);
+
+    animation: chapter6PhotoIn .7s ease .45s both;
+}
+
+.chapter6-little-photo-inner {
+    width: 125px;
+    height: 95px;
+
+    border: 7px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 6px 14px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .63rem;
+    line-height: 1.4;
+}
+
+
+/* ENDING */
+
+.chapter6-ending {
+    width: 90%;
+
+    margin: 10px auto 0;
+    padding-top: 10px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .73rem;
+    line-height: 1.45;
+}
+
+.chapter6-ending p {
+    margin: 0 0 5px;
+}
+
+.chapter6-ending strong {
+    display: block;
+
+    margin: 5px 0;
+
+    color: #a65f69;
+    font-style: italic;
+}
+
+.chapter6-ending span {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #9b686a;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes chapter6PhotoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+
+@keyframes chapter6BenefitIn {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes chapter6FeelingsIn {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================================================
+   CHAPTER 6 — PAGE 12 HEIGHT FIX
+   Keeps global book size/margins unchanged
+========================================================= */
+
+/* top heading */
+#chapter6 .right-page .little-heading {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+#chapter6 .right-page .chapter6-peace-intro {
+    margin-top: 3px;
+    margin-bottom: 8px !important;
+}
+
+
+/* slightly smaller main photo */
+#chapter6 .right-page .chapter6-hero-photo {
+    margin-top: 7px;
+    margin-bottom: 8px;
+}
+
+#chapter6 .right-page .chapter6-hero-photo-inner {
+    width: 175px;
+    height: 135px;
+}
+
+
+/* memory pills */
+#chapter6 .right-page .chapter6-simple-memories {
+    margin-top: 3px;
+    margin-bottom: 8px;
+    gap: 5px;
+}
+
+#chapter6 .right-page .chapter6-simple-memories span {
+    padding: 4px 9px;
+    font-size: 1.0rem;
+}
+
+
+/* main peaceful section */
+#chapter6 .right-page .chapter6-peace {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 8px 13px;
+
+    font-size: 1.0rem;
+    line-height: 1.35;
+}
+
+#chapter6 .right-page .chapter6-peace p {
+    margin: 2px 0 5px;
+}
+
+#chapter6 .right-page .chapter6-peace h3 {
+    margin: 5px 0;
+    font-size: 1.0rem;
+}
+
+#chapter6 .right-page .chapter6-peace strong {
+    margin-top: 5px;
+}
+
+
+/* pizza photo */
+#chapter6 .right-page .chapter6-little-photo {
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+#chapter6 .right-page .chapter6-little-photo-inner {
+    width: 105px;
+    height: 72px;
+}
+
+
+/* ending */
+#chapter6 .right-page .chapter6-ending {
+    margin-top: 5px;
+    padding-top: 6px;
+
+    font-size: 1.0rem;
+    line-height: 1.3;
+}
+
+#chapter6 .right-page .chapter6-ending p {
+    margin-bottom: 3px;
+}
+
+#chapter6 .right-page .chapter6-ending strong {
+    margin: 3px 0;
+}
+
+#chapter6 .right-page .chapter6-ending span {
+    margin-top: 3px;
+}
+/* =========================================================
+   CHAPTER SEVEN — PAGES 13 & 14
+========================================================= */
+
+#chapter7 .page-content,
+#chapter7 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chapter7 h2 {
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+#chapter7 .story-text {
+    margin-top: 6px;
+    margin-bottom: 7px;
+}
+
+#chapter7 .handwritten-note {
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PAGE 13 — BECOMING A COUPLE
+========================================================= */
+
+/* THE QUESTION */
+
+.chapter7-question {
+    width: 85%;
+
+    margin: 17px auto 8px;
+
+    text-align: center;
+}
+
+.chapter7-question-text {
+    width: fit-content;
+
+    margin: 0 auto 7px;
+    padding: 10px 22px;
+
+    background: #f1e1de;
+    border-radius: 22px;
+
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    font-style: italic;
+
+    color: #a65f69;
+
+    animation: chapter7QuestionIn .7s ease .2s both;
+}
+
+.chapter7-question span {
+    color: #8c6962;
+    font-size: .72rem;
+    font-style: italic;
+}
+
+
+/* YES */
+
+.chapter7-answer {
+    margin: 8px auto;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .82rem;
+}
+
+.chapter7-answer strong {
+    color: #ad5e6a;
+    font-size: 1.05rem;
+}
+
+
+/* KEEP IT PRIVATE */
+
+.chapter7-private {
+    width: 88%;
+
+    margin: 14px auto;
+    padding: 11px 15px;
+
+    background: #f3e9df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .75rem;
+    line-height: 1.4;
+}
+
+.chapter7-private p {
+    margin: 0 0 6px;
+}
+
+.chapter7-private strong {
+    color: #a65f69;
+    font-style: italic;
+}
+
+
+/* MOVING DAY */
+
+.chapter7-moving {
+    width: 90%;
+
+    margin: 17px auto 10px;
+    padding-top: 13px;
+
+    border-top: 1px solid #ddc8bd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+}
+
+.chapter7-moving-text {
+    flex: 1;
+
+    color: #745750;
+    font-size: .74rem;
+    line-height: 1.4;
+}
+
+.chapter7-moving-text p {
+    margin: 4px 0;
+}
+
+.chapter7-moving-photo {
+    position: relative;
+    flex-shrink: 0;
+
+    transform: rotate(3deg);
+
+    animation: chapter7PhotoIn .7s ease .35s both;
+}
+
+.chapter7-moving-photo-inner {
+    width: 125px;
+    height: 120px;
+
+    border: 7px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 6px 14px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .64rem;
+    line-height: 1.4;
+}
+
+
+/* STAYING WITH HIM */
+
+.chapter7-staying {
+    width: 88%;
+
+    margin: 14px auto 0;
+    padding-top: 10px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .75rem;
+    line-height: 1.4;
+}
+
+.chapter7-staying p {
+    margin: 0 0 4px;
+}
+
+.chapter7-staying strong {
+    display: block;
+
+    margin: 4px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter7-staying span {
+    color: #9a6a69;
+    font-size: .7rem;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PAGE 14 — SECRET RELATIONSHIP
+========================================================= */
+
+#chapter7 .little-heading {
+    margin-top: 0;
+    margin-bottom: 11px;
+}
+
+
+/* MAIN PHOTO */
+
+.chapter7-main-photo {
+    width: fit-content;
+
+    margin: 15px auto 14px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter7PhotoIn .75s ease .2s both;
+}
+
+.chapter7-main-photo-inner {
+    width: 175px;
+    height: 140px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .68rem;
+    line-height: 1.45;
+}
+
+
+/* HYDERABAD KITCHEN */
+
+.chapter7-hyderabad {
+    width: 90%;
+
+    margin: 10px auto;
+    padding: 10px 14px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .72rem;
+    line-height: 1.4;
+}
+
+.chapter7-hyderabad p {
+    margin: 3px 0 5px;
+}
+
+.chapter7-hand-question {
+    width: fit-content;
+
+    margin: 8px auto;
+    padding: 7px 16px;
+
+    background: #f1e1de;
+    border-radius: 18px;
+
+    font-family: Georgia, serif;
+    font-size: .95rem;
+    font-style: italic;
+
+    color: #a65f69;
+
+    animation: chapter7QuestionIn .7s ease .3s both;
+}
+
+
+/* REACTIONS */
+
+.chapter7-reactions {
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 8px auto;
+}
+
+.chapter7-reactions span {
+    min-width: 80px;
+
+    padding: 6px 8px;
+
+    background: #f2e8df;
+    border-radius: 7px;
+
+    color: #765a52;
+    font-size: .66rem;
+    line-height: 1.35;
+}
+
+
+/* RELATIONSHIP LOGIC */
+
+.chapter7-logic {
+    width: 82%;
+
+    margin: 10px auto;
+
+    color: #745750;
+    font-size: .68rem;
+}
+
+.chapter7-logic-title {
+    margin: 0 0 6px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #9f606a;
+}
+
+.logic-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px 8px;
+
+    border-bottom: 1px dashed #ddc8bd;
+}
+
+.logic-row strong {
+    color: #a65f69;
+}
+
+
+/* ENDING */
+
+.chapter7-ending {
+    width: 88%;
+
+    margin: 11px auto 0;
+    padding-top: 9px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .72rem;
+    line-height: 1.4;
+}
+
+.chapter7-ending p {
+    margin: 0 0 4px;
+}
+
+.chapter7-ending strong {
+    display: block;
+
+    margin: 4px 0;
+
+    color: #a65f69;
+    font-style: italic;
+}
+
+.chapter7-ending span {
+    color: #9a6968;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes chapter7QuestionIn {
+    from {
+        opacity: 0;
+        transform: scale(.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes chapter7PhotoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+/* =========================================================
+   CHAPTER EIGHT — PAGES 15 & 16
+========================================================= */
+
+#chapter8 .page-content,
+#chapter8 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chapter8 h2 {
+    margin-top: 14px;
+    margin-bottom: 25px;
+}
+
+#chapter8 .story-text {
+    margin-top: 7px;
+    margin-bottom: 8px;
+}
+
+#chapter8 .handwritten-note {
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PAGE 15
+========================================================= */
+
+.chapter8-photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 26px;
+
+    margin: 24px 0 19px;
+}
+
+.chapter8-photo {
+    position: relative;
+    animation: chapter8PhotoIn .75s ease both;
+}
+
+.chapter8-photo.photo-left {
+    transform: rotate(-3deg);
+}
+
+.chapter8-photo.photo-right {
+    transform: rotate(3deg);
+    animation-delay: .15s;
+}
+
+.chapter8-photo-inner {
+    width: 150px;
+    height: 155px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: 1.0rem;
+    line-height: 1.45;
+}
+
+
+.chapter8-main-line {
+    width: 88%;
+
+    margin: 13px auto 8px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+
+.chapter8-moments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 6px;
+
+    width: 90%;
+    margin: 14px auto;
+}
+
+.chapter8-moments span {
+    padding: 5px 10px;
+
+    background: #f1e2df;
+    border-radius: 16px;
+
+    color: #94616a;
+    font-size: 1.0rem;
+}
+
+
+.chapter8-comfort {
+    width: 88%;
+
+    margin: 13px auto 0;
+    padding: 11px 14px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: 1.0rem;
+    line-height: 1.45;
+}
+
+.chapter8-comfort p {
+    margin: 3px 0 6px;
+}
+
+.chapter8-comfort strong {
+    display: block;
+
+    margin: 6px 0;
+
+    color: #a65f69;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PAGE 16
+========================================================= */
+
+#chapter8 .little-heading {
+    margin-top: 0;
+    margin-bottom: 7px;
+}
+
+.chapter8-opening {
+    margin: 0 auto 12px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .78rem;
+}
+
+
+/* HERO PHOTO */
+
+.chapter8-hero-photo {
+    width: fit-content;
+
+    margin: 12px auto 14px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter8PhotoIn .8s ease .2s both;
+}
+
+.chapter8-hero-photo-inner {
+    width: 185px;
+    height: 155px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .68rem;
+    line-height: 1.45;
+}
+
+
+/* BECOMING PUBLIC */
+
+.chapter8-public {
+    width: 88%;
+
+    margin: 8px auto 10px;
+
+    padding: 9px 14px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .72rem;
+    line-height: 1.4;
+}
+
+.chapter8-public p {
+    margin: 3px 0 5px;
+}
+
+.chapter8-public h3 {
+    margin: 7px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter8-public strong {
+    color: #a65f69;
+}
+
+
+/* STATUS */
+
+.chapter8-status {
+    width: 80%;
+
+    margin: 10px auto;
+
+    color: #745750;
+    font-size: .67rem;
+}
+
+.chapter8-status-title {
+    margin: 0 0 5px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #9f606a;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 4px 8px;
+
+    border-bottom: 1px dashed #ddc8bd;
+}
+
+.status-row strong {
+    color: #a65f69;
+}
+
+
+/* SMALL MEMORY */
+
+.chapter8-small-memory {
+    width: 86%;
+
+    margin: 11px auto 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.chapter8-small-photo {
+    position: relative;
+    flex-shrink: 0;
+
+    transform: rotate(3deg);
+
+    animation: chapter8PhotoIn .7s ease .45s both;
+}
+
+.chapter8-small-photo-inner {
+    width: 105px;
+    height: 90px;
+
+    border: 7px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 6px 14px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: 1.0rem;
+    line-height: 1.4;
+}
+
+.chapter8-small-text {
+    flex: 1;
+
+    color: #745750;
+    font-size: 1.0rem;
+    line-height: 1.4;
+}
+
+.chapter8-small-text p {
+    margin: 3px 0 5px;
+}
+
+
+/* ENDING */
+
+.chapter8-ending {
+    width: 88%;
+
+    margin: 9px auto 0;
+    padding-top: 8px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: 1.0rem;
+    line-height: 1.4;
+}
+
+.chapter8-ending p {
+    margin: 0 0 4px;
+}
+
+.chapter8-ending strong {
+    display: block;
+
+    margin: 3px 0;
+
+    font-family: Georgia, serif;
+    font-size: .95rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter8-ending span {
+    display: block;
+    margin-top: 4px;
+
+    color: #956765;
+}
+
+.chapter8-next {
+    margin-top: 5px !important;
+
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #ad5e6a !important;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes chapter8PhotoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+/* =========================================================
+   CHAPTER NINE — PAGES 17 & 18
+========================================================= */
+
+#chapter9 .page-content,
+#chapter9 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chapter9 h2 {
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+#chapter9 .story-text {
+    margin-top: 6px;
+    margin-bottom: 7px;
+}
+
+#chapter9 .handwritten-note {
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   PAGE 17 — CORK
+========================================================= */
+
+.chapter9-cork-collage {
+    width: 90%;
+    height: 230px;
+
+    margin: 18px auto 13px;
+
+    position: relative;
+}
+
+.chapter9-photo {
+    position: absolute;
+
+    animation: chapter9PhotoIn .75s ease both;
+}
+
+.chapter9-photo-inner {
+    border: 7px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .63rem;
+    line-height: 1.45;
+}
+
+
+/* LARGE COUPLE PHOTO */
+
+.cork-photo-one {
+    left: 8px;
+    top: 10px;
+
+    transform: rotate(-4deg);
+}
+
+.cork-photo-one .chapter9-photo-inner {
+    width: 165px;
+    height: 185px;
+}
+
+
+/* SCENERY */
+
+.cork-photo-two {
+    right: 10px;
+    top: 0;
+
+    transform: rotate(3deg);
+
+    animation-delay: .15s;
+}
+
+.cork-photo-two .chapter9-photo-inner {
+    width: 155px;
+    height: 130px;
+}
+
+
+/* SMALL GROUP PHOTO */
+
+.cork-photo-three {
+    right: 28px;
+    bottom: 0;
+
+    transform: rotate(-2deg);
+
+    animation-delay: .3s;
+}
+
+.cork-photo-three .chapter9-photo-inner {
+    width: 130px;
+    height: 90px;
+}
+
+
+/* CORK STORY */
+
+.chapter9-cork-text {
+    width: 88%;
+
+    margin: 7px auto 9px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .73rem;
+    line-height: 1.4;
+}
+
+.chapter9-cork-text p {
+    margin: 3px 0 5px;
+}
+
+.chapter9-kiss {
+    width: fit-content;
+
+    margin: 7px auto;
+    padding: 6px 14px;
+
+    background: #f1e1de;
+    border-radius: 17px;
+
+    color: #a65f69;
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    animation: chapter9Pop .65s ease .4s both;
+}
+
+
+/* TRIP FEELING */
+
+.chapter9-trip-feeling {
+    width: 86%;
+
+    margin: 9px auto;
+
+    padding: 8px 12px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .72rem;
+    line-height: 1.4;
+}
+
+.chapter9-trip-feeling p {
+    margin: 0 0 4px;
+}
+
+.chapter9-trip-feeling strong {
+    color: #a65f69;
+}
+
+
+/* TRANSITION */
+
+.chapter9-transition {
+    width: 88%;
+
+    margin: 10px auto 0;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: .78rem;
+    font-style: italic;
+    line-height: 1.45;
+
+    color: #ad5e6a;
+}
+
+
+/* =========================================================
+   PAGE 18 — OUR LITTLE HOME
+========================================================= */
+
+#chapter9 .little-heading {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+
+/* HOME PHOTO */
+
+.chapter9-home-photo {
+    width: fit-content;
+
+    margin: 12px auto 10px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter9PhotoIn .8s ease .2s both;
+}
+
+.chapter9-home-photo-inner {
+    width: 180px;
+    height: 140px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: .67rem;
+    line-height: 1.45;
+}
+
+
+/* HOME MOMENTS */
+
+.chapter9-home-moments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 90%;
+
+    margin: 7px auto 10px;
+}
+
+.chapter9-home-moments span {
+    padding: 4px 9px;
+
+    background: #f1e2df;
+    border-radius: 15px;
+
+    color: #94616a;
+    font-size: .64rem;
+}
+
+
+/* HOME TEXT */
+
+.chapter9-home-text {
+    width: 88%;
+
+    margin: 7px auto;
+
+    padding: 8px 13px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .71rem;
+    line-height: 1.35;
+}
+
+.chapter9-home-text p {
+    margin: 3px 0 5px;
+}
+
+.chapter9-home-text h3 {
+    margin: 6px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.18rem;
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ad5e6a;
+
+    animation: chapter9SoftIn .8s ease .35s both;
+}
+
+
+/* POOP INCIDENT 😂 */
+
+.chapter9-poop {
+    width: 84%;
+
+    margin: 9px auto;
+
+    padding: 8px 12px;
+
+    background: #f3e9df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .68rem;
+    line-height: 1.35;
+}
+
+.chapter9-poop-title {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #9f606a;
+}
+
+.chapter9-poop p {
+    margin: 3px 0;
+}
+
+.chapter9-dialogue {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin: 5px 0;
+}
+
+.chapter9-dialogue span {
+    padding: 4px 8px;
+
+    background: #fbf5ea;
+    border-radius: 12px;
+
+    font-size: .64rem;
+}
+
+.chapter9-dialogue strong {
+    color: #a65f69;
+}
+
+
+/* ENDING */
+
+.chapter9-ending {
+    width: 88%;
+
+    margin: 8px auto 0;
+    padding-top: 8px;
+
+    border-top: 1px solid #dbc5ba;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .7rem;
+    line-height: 1.4;
+}
+
+.chapter9-ending p {
+    margin: 0 0 4px;
+}
+
+.chapter9-ending strong {
+    display: block;
+
+    margin: 5px 0;
+
+    font-family: Georgia, serif;
+    font-size: .9rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter9-ending span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #986a68;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes chapter9PhotoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px) rotate(0deg) scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+
+@keyframes chapter9Pop {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes chapter9SoftIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================================================
+   CHAPTER TEN — PAGES 19 & 20
+========================================================= */
+
+#chapter10 .page-content,
+#chapter10 .chapter-right-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#chapter10 h2 {
+    margin-top: 14px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   PAGE 19 — WHAT HAPPENS NEXT?
+========================================================= */
+
+.chapter10-big-answer {
+    margin: 3px 0 0;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 1.0rem;
+    font-style: italic;
+
+    color: #745750;
+}
+
+.chapter10-noidea {
+    width: fit-content;
+
+    margin: 5px auto 10px;
+    padding: 7px 18px;
+
+    background: #f1e1de;
+    border-radius: 20px;
+
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+
+    animation: chapter10Pop .65s ease .2s both;
+}
+
+.chapter10-intro {
+    width: 90%;
+
+    margin: 8px auto !important;
+
+    font-size: 1.0rem;
+    line-height: 1.4;
+}
+
+
+/* FUTURE PHOTO */
+
+.chapter10-future-photo {
+    width: fit-content;
+
+    margin: 13px auto 10px;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    animation: chapter10PhotoIn .8s ease .25s both;
+}
+
+.chapter10-future-photo-inner {
+    width: 165px;
+    height: 135px;
+
+    border: 8px solid white;
+    background: #eadccd;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: #94786e;
+    font-size: 1.0rem;
+    line-height: 1.45;
+}
+
+
+/* IT'S OKAY NOT TO KNOW */
+
+.chapter10-okay {
+    width: 88%;
+
+    margin: 8px auto 10px;
+    padding: 8px 13px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: 0.90rem;
+    line-height: 1.35;
+}
+
+.chapter10-okay p {
+    margin: 2px 0 4px;
+}
+
+.chapter10-okay strong {
+    display: block;
+
+    margin: 5px 0;
+
+    font-family: Georgia, serif;
+    font-size: .9rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter10-okay span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #9a6768;
+    font-style: italic;
+}
+
+
+/* WISHLIST */
+
+.chapter10-list-title {
+    margin: 9px 0 6px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: .90rem;
+    font-style: italic;
+
+    color: #9f606a;
+}
+
+.chapter10-wishlist {
+    width: 90%;
+
+    margin: 0 auto 9px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 5px;
+}
+
+.chapter10-wishlist span {
+    padding: 6px 3px;
+
+    background: #f2e8df;
+    border-radius: 13px;
+
+    text-align: center;
+
+    color: #765a52;
+    font-size: .58rem;
+
+    animation: chapter10WishIn .5s ease both;
+}
+
+.chapter10-wishlist span:nth-child(2) {
+    animation-delay: .05s;
+}
+
+.chapter10-wishlist span:nth-child(3) {
+    animation-delay: .1s;
+}
+
+.chapter10-wishlist span:nth-child(4) {
+    animation-delay: .15s;
+}
+
+.chapter10-wishlist span:nth-child(5) {
+    animation-delay: .2s;
+}
+
+.chapter10-wishlist span:nth-child(6) {
+    animation-delay: .25s;
+}
+
+.chapter10-wishlist span:nth-child(7) {
+    animation-delay: .3s;
+}
+
+.chapter10-wishlist span:nth-child(8) {
+    animation-delay: .35s;
+}
+
+
+/* JOBS 😂 */
+
+.chapter10-job-box {
+    width: 86%;
+
+    margin: 9px auto 0;
+    padding: 8px 12px;
+
+    background: #f3e4df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: 1.0rem;
+}
+
+.chapter10-job-box span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-style: italic;
+}
+
+.chapter10-job-box strong {
+    display: block;
+
+    color: #a65f69;
+    font-size: .73rem;
+    letter-spacing: .3px;
+}
+
+.chapter10-job-box p {
+    margin: 3px 0 0;
+}
+
+
+/* =========================================================
+   PAGE 20 — LETTER TO HIM
+========================================================= */
+
+#chapter10 .little-heading {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+/* LETTER */
+
+.chapter10-letter {
+    width: 89%;
+
+    margin: 0 auto 10px;
+
+    text-align: left;
+
+    color: #745750;
+    font-size: 1.0rem;
+    line-height: 1.45;
+}
+
+.chapter10-letter p {
+    margin: 0 0 8px;
+}
+
+.chapter10-dear {
+    font-family: Georgia, serif;
+    font-size: 1rem !important;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.chapter10-letter-highlight {
+    width: fit-content;
+
+    margin: 11px auto !important;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 1.0rem;
+    font-style: italic;
+
+    color: #a65f69;
+}
+
+
+/* HOPES */
+
+.chapter10-hopes {
+    width: 88%;
+
+    margin: 9px auto;
+    padding: 9px 13px;
+
+    border-top: 1px solid #ddc8bd;
+    border-bottom: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: 1.0rem;
+    line-height: 1.4;
+}
+
+.chapter10-hopes p {
+    margin: 3px 0 6px;
+}
+
+.chapter10-hopes strong {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a65f69;
+    font-style: italic;
+}
+
+
+/* MAIN MESSAGE */
+
+.chapter10-main-message {
+    width: 88%;
+
+    margin: 12px auto;
+
+    text-align: center;
+
+    animation: chapter10SoftIn .9s ease .4s both;
+}
+
+.chapter10-main-message p {
+    margin: 2px 0;
+
+    color: #745750;
+    font-size: .75rem;
+}
+
+.chapter10-main-message h3 {
+    margin: 4px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: normal;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+.tiny-heart {
+    color: #c8878f;
+    font-size: 1rem;
+}
+
+
+/* UNIBUDDY CALLBACK */
+
+.chapter10-callback {
+    width: 87%;
+
+    margin: 12px auto;
+    padding: 9px 12px;
+
+    background: #f3e9df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #745750;
+    font-size: .7rem;
+    line-height: 1.4;
+}
+
+.chapter10-callback p {
+    margin: 3px 0 5px;
+}
+
+.chapter10-funny {
+    font-family: Georgia, serif;
+    font-style: italic;
+
+    color: #9f606a;
+}
+
+.chapter10-callback-final {
+    margin-top: 6px !important;
+
+    font-family: Georgia, serif;
+    font-size: .88rem;
+    font-style: italic;
+
+    color: #ad5e6a;
+}
+
+
+/* FINAL */
+
+.chapter10-final {
+    width: 90%;
+
+    margin: 13px auto 0;
+
+    text-align: center;
+
+    color: #745750;
+}
+
+.chapter10-final p {
+    margin: 0 0 4px;
+
+    font-size: .72rem;
+}
+
+.chapter10-final strong {
+    display: block;
+
+    margin: 5px 0;
+
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: normal;
+
+    color: #ad5e6a;
+}
+
+.chapter10-final span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-family: Georgia, serif;
+    font-size: .85rem;
+    font-style: italic;
+
+    color: #9b686a;
+
+    animation: chapter10Continue 1.2s ease .7s both;
+}
+
+
+/* =========================================================
+   CHAPTER 10 ANIMATIONS
+========================================================= */
+
+@keyframes chapter10Pop {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes chapter10PhotoIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+}
+
+@keyframes chapter10WishIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes chapter10SoftIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes chapter10Continue {
+    from {
+        opacity: 0;
+        letter-spacing: 3px;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 1px;
+    }
+}
+/* Chapter 1 — Real Unibuddy screenshot */
+
+#chapter1 .scrapbook-photo.portrait-photo {
+    width: 280px;
+    height: 315px;
+    margin: 5px auto 10px;
+}
+
+.unibuddy-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+/* =========================================================
+   CHAPTER 2 — REAL IMAGES
+========================================================= */
+
+/* Page 3 — Barber chat + haircut photo */
+
+#chapter2 .mini-photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 12px auto 8px;
+}
+
+#chapter2 .mini-screenshot {
+    width: 150px;
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+#chapter2 .chapter2-mini-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+/* Page 4 — Daily chat screenshot */
+
+#chapter2 .daily-chat-placeholder {
+    width: 230px;
+    height: 190px;
+    margin: 12px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#chapter2 .chapter2-daily-chat-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+/* =========================================================
+   CHAPTER 3 — PAGE 5
+   ONE-PHOTO VERSION
+========================================================= */
+
+#chapter3 .chapter3-plan {
+    width: fit-content;
+    margin: 12px auto;
+    padding: 7px 20px;
+
+    background: #f1e1de;
+    border-radius: 20px;
+
+    font-family: Georgia, serif;
+    font-size: .9rem;
+    font-style: italic;
+    color: #a65f69;
+}
+
+
+/* -------------------------
+   PAV BHAJI PHOTO
+------------------------- */
+
+#chapter3 .chapter3-pav-photo {
+    width: 210px;
+    height: 155px;
+
+    margin: 12px auto 5px;
+
+    position: relative;
+
+    padding: 7px 7px 22px;
+
+    background: white;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .16);
+
+    transform: rotate(-2deg);
+
+    box-sizing: border-box;
+
+    animation: chapter3PavPhoto .7s ease .2s both;
+}
+
+
+#chapter3 .chapter3-pav-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+#chapter3 .chapter3-photo-caption {
+    margin: 5px 0 8px;
+    font-size: .68rem;
+}
+
+
+/* -------------------------
+   LITTLE NIGHT TIMELINE
+------------------------- */
+
+#chapter3 .chapter3-night-flow {
+    width: 92%;
+
+    margin: 8px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+#chapter3 .chapter3-night-item {
+    width: 30%;
+
+    padding: 7px 5px;
+
+    background: #f3e9df;
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #745750;
+
+    font-size: .62rem;
+    line-height: 1.3;
+}
+
+
+#chapter3 .chapter3-night-item span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: .9rem;
+}
+
+
+#chapter3 .chapter3-night-item p {
+    margin: 0;
+}
+
+
+#chapter3 .chapter3-night-arrow {
+    color: #bd8c84;
+    font-size: .85rem;
+
+    transform: rotate(-90deg);
+}
+
+
+/* -------------------------
+   DEEPER CONVERSATIONS
+------------------------- */
+
+#chapter3 .chapter3-deeper-text {
+    width: 90%;
+
+    margin: 8px auto !important;
+
+    font-size: .7rem;
+    line-height: 1.4;
+}
+
+
+#chapter3 .chapter3-topics {
+    width: 88%;
+
+    margin: 7px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 5px;
+}
+
+
+#chapter3 .chapter3-topics span {
+    padding: 5px 3px;
+
+    background: #eee2d8;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: #765a52;
+
+    font-size: .56rem;
+}
+
+
+/* -------------------------
+   4 AM ENDING
+------------------------- */
+
+#chapter3 .chapter3-time {
+    width: 86%;
+
+    margin: 9px auto 0;
+
+    padding: 8px 10px;
+
+    border-top: 1px solid #ddc8bd;
+
+    text-align: center;
+
+    color: #745750;
+
+    font-family: Georgia, serif;
+
+    font-size: .68rem;
+    font-style: italic;
+
+    line-height: 1.35;
+}
+
+
+#chapter3 .chapter3-clock {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #ad5e6a;
+
+    font-size: .95rem;
+    font-weight: bold;
+}
+
+
+#chapter3 .chapter3-time p {
+    margin: 0;
+}
+
+
+/* -------------------------
+   ANIMATION
+------------------------- */
+
+@keyframes chapter3PavPhoto {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER 4 — KILLINEY REAL PHOTO
+========================================================= */
+
+#chapter4 .chapter4-small-photo {
+    width: 190px;
+    height: 155px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 20px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+}
+
+
+#chapter4 .chapter4-killiney-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 4 — PAGE 8 REAL PHOTOS
+========================================================= */
+
+
+/* -------------------------
+   TEMPLE BAR PHOTO
+------------------------- */
+
+#chapter4 .chapter4-temple-photo {
+    width: 225px;
+    height: 175px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(2deg);
+
+    overflow: visible;
+}
+
+
+#chapter4 .chapter4-temple-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* -------------------------
+   SANDYMOUNT PHOTO
+------------------------- */
+
+#chapter4 .chapter4-beach-photo {
+    width: 175px;
+    height: 145px;
+
+    padding: 6px 6px 19px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 6px 15px rgba(60, 40, 30, .15);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+}
+
+
+#chapter4 .chapter4-sandymount-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 5 — MAY 19 PARTY PHOTO
+========================================================= */
+
+#chapter5 .chapter5-night-photo {
+    width: 210px;
+    height: 175px;
+
+    margin: 12px auto 8px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+
+    animation: chapter5NightPhoto .7s ease .2s both;
+}
+
+
+#chapter5 .chapter5-night-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+@keyframes chapter5NightPhoto {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) rotate(0deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg) scale(1);
+    }
+
+}
+/* =========================================================
+   CHAPTER 6 — REAL PHOTOS
+========================================================= */
+
+#chapter6 .chapter6-big-photo {
+    overflow: hidden;
+}
+
+#chapter6 .chapter6-real-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 6 — PAGE 12 REAL PHOTOS
+========================================================= */
+
+
+/* DÚN LAOGHAIRE — MAIN PHOTO */
+
+#chapter6 .chapter6-hero-photo {
+    width: 225px;
+    height: 170px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+}
+
+
+#chapter6 .chapter6-hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* BEER + PIZZA — SMALL MEMORY */
+
+#chapter6 .chapter6-little-photo {
+    width: 150px;
+    height: 115px;
+
+    margin: 10px auto 0;
+
+    padding: 6px 6px 18px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 6px 14px rgba(60, 40, 30, .15);
+
+    box-sizing: border-box;
+
+    transform: rotate(2deg);
+
+    overflow: visible;
+}
+
+
+#chapter6 .chapter6-little-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 7 — SHIFTING / MOVING DAY PHOTO
+========================================================= */
+
+#chapter7 .chapter7-moving-photo {
+    width: 155px;
+    height: 135px;
+
+    position: relative;
+
+    padding: 6px 6px 18px;
+
+    background: white;
+
+    box-shadow: 0 6px 15px rgba(60, 40, 30, .15);
+
+    box-sizing: border-box;
+
+    transform: rotate(2deg);
+
+    overflow: visible;
+}
+
+
+#chapter7 .chapter7-moving-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 7 — SECRET ERA COUPLE PHOTO
+========================================================= */
+
+#chapter7 .chapter7-main-photo {
+    width: 220px;
+    height: 175px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+}
+
+
+#chapter7 .chapter7-main-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 8 — REAL DATE PHOTOS
+========================================================= */
+
+#chapter8 .chapter8-photo {
+    width: 175px;
+    height: 155px;
+
+    padding: 7px 7px 21px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 16px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* Give the two photos a slightly messy scrapbook look */
+
+#chapter8 .photo-left {
+    transform: rotate(-2deg);
+}
+
+#chapter8 .photo-right {
+    transform: rotate(2deg);
+}
+
+
+/* Actual images */
+
+#chapter8 .chapter8-real-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 8 — PAGE 16 REAL PHOTOS
+========================================================= */
+
+
+/* MAIN HAPPY COUPLE PHOTO */
+
+#chapter8 .chapter8-hero-photo {
+    width: 225px;
+    height: 175px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: visible;
+}
+
+#chapter8 .chapter8-hero-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* FRIENDS + US PHOTO */
+
+#chapter8 .chapter8-small-photo {
+    width: 165px;
+    height: 125px;
+
+    padding: 6px 6px 18px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 6px 15px rgba(60, 40, 30, .15);
+
+    box-sizing: border-box;
+
+    transform: rotate(2deg);
+
+    overflow: visible;
+}
+
+#chapter8 .chapter8-friends-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 25%;
+
+    display: block;
+}
+
+/* =========================================================
+   CHAPTER 9 — CORK COLLAGE FIX
+========================================================= */
+
+#chapter9 .chapter9-cork-collage {
+    width: 390px;
+    height: 245px;
+
+    margin: 15px auto 12px;
+
+    position: relative;
+}
+
+
+/* ALL THREE PHOTO FRAMES */
+
+#chapter9 .chapter9-photo {
+    position: absolute;
+
+    padding: 6px 6px 18px;
+
+    background: white;
+
+    box-shadow: 0 6px 15px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* PHOTO 1 — CORK COUPLE */
+
+#chapter9 .cork-photo-one {
+    width: 165px;
+    height: 145px;
+
+    left: 8px;
+    top: 12px;
+
+    transform: rotate(-5deg);
+
+    z-index: 2;
+}
+
+
+/* PHOTO 2 — MIZEN HEAD */
+
+#chapter9 .cork-photo-two {
+    width: 175px;
+    height: 135px;
+
+    right: 5px;
+    top: 5px;
+
+    transform: rotate(4deg);
+
+    z-index: 1;
+}
+
+
+/* PHOTO 3 — GROUP PHOTO */
+
+#chapter9 .cork-photo-three {
+    width: 175px;
+    height: 130px;
+
+    left: 105px;
+    top: 105px;
+
+    transform: rotate(2deg);
+
+    z-index: 3;
+}
+
+
+/* REAL IMAGES */
+
+#chapter9 .chapter9-cork-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 9 — LITTLE HOME MEMORY
+========================================================= */
+
+#chapter9 .chapter9-home-photo {
+    width: 210px;
+    height: 165px;
+
+    margin: 10px auto 12px;
+
+    padding: 7px 7px 22px;
+
+    position: relative;
+
+    background: white;
+
+    box-shadow: 0 7px 17px rgba(60, 40, 30, .16);
+
+    box-sizing: border-box;
+
+    transform: rotate(-2deg);
+
+    overflow: hidden;
+}
+
+
+#chapter9 .chapter9-home-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+/* =========================================================
+   CHAPTER 10 — FAVOURITE PHOTO
+========================================================= */
+
+#chapter10 .chapter10-future-photo {
+    padding: 7px 7px 22px;
+    background: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#chapter10 .chapter10-future-image {
+    width: 165px;
+    height: 135px;
+
+    object-fit: cover;
+    display: block;
+}
+/* =========================================================
+   FINAL BOOK POLISH — READABILITY + CONSISTENCY
+   KEEP THIS AT THE VERY BOTTOM OF style.css
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. BOOK SIZE
+--------------------------------------------------------- */
+
+.book {
+    width: min(1320px, 94vw);
+    height: 820px;
+}
+
+
+/* ---------------------------------------------------------
+   2. CONSISTENT READABLE TYPOGRAPHY
+--------------------------------------------------------- */
+
+/* Normal story text */
+.book-page .story-text {
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+/* Small supporting text should NEVER become microscopic */
+.book-page .tiny-story {
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+/* Dates */
+.book-page .story-date {
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+/* Little headings at top of right pages */
+.book-page .little-heading {
+    font-size: 0.92rem;
+    line-height: 1.4;
+}
+
+/* Handwritten / funny comments */
+.book-page .handwritten-note {
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* Chapter headings remain large */
+.book-page h2 {
+    font-size: 2.35rem;
+    line-height: 1.08;
+}
+
+
+/* ---------------------------------------------------------
+   3. REMOVE ACCIDENTAL DIAGONAL TEXT / DIVIDERS
+--------------------------------------------------------- */
+
+/* Text can still look scrapbook-ish without leaning */
+.handwritten-note,
+.chapter-ending,
+.denial-line,
+.final-quote {
+    transform: none;
+}
+
+/* Any section using divider lines stays perfectly straight */
+.chapter5-ending,
+.chapter6-ending,
+.chapter7-ending,
+.chapter8-comfort,
+.chapter9-ending,
+.chapter10-okay,
+.chapter10-hopes {
+    transform: none;
+}
+
+
+/* ---------------------------------------------------------
+   4. CHAPTER 5 — GIVE THE CONTENT ROOM AGAIN
+--------------------------------------------------------- */
+
+#chapter5 .story-text {
+    font-size: 0.84rem;
+    line-height: 1.42;
+}
+
+#chapter5 .tiny-story {
+    font-size: 0.74rem;
+}
+
+#chapter5 .handwritten-note {
+    font-size: 0.81rem;
+}
+
+/* Page 9 */
+#chapter5 .left-page .page-content {
+    height: 100%;
+}
+
+#chapter5 .left-page h2 {
+    margin-top: 13px;
+    margin-bottom: 18px;
+}
+
+#chapter5 .chapter5-night-photo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Page 10 */
+#chapter5 .right-page .chapter-right-content {
+    height: 100%;
+}
+
+#chapter5 .right-page .little-heading {
+    font-size: 0.94rem;
+    margin-bottom: 9px;
+}
+
+#chapter5 .air-mattress-card {
+    font-size: 0.73rem;
+    line-height: 1.4;
+}
+
+#chapter5 .first-kiss-section,
+#chapter5 .drunk-confession,
+#chapter5 .next-morning,
+#chapter5 .chapter5-ending {
+    font-size: 0.72rem;
+    line-height: 1.38;
+}
+
+
+/* ---------------------------------------------------------
+   5. CHAPTER 6 — REMOVE THE OLD MICROSCOPIC LOOK
+--------------------------------------------------------- */
+
+#chapter6 .story-text {
+    font-size: 0.86rem;
+    line-height: 1.48;
+}
+
+#chapter6 .little-heading {
+    font-size: 0.95rem;
+}
+
+#chapter6 .chapter6-peace,
+#chapter6 .chapter6-ending {
+    font-size: 0.76rem;
+    line-height: 1.45;
+}
+
+#chapter6 .chapter6-simple-memories span,
+#chapter6 .benefits-list span {
+    font-size: 0.69rem;
+}
+
+#chapter6 .chapter6-main-line {
+    font-size: 1.08rem;
+}
+
+
+/* ---------------------------------------------------------
+   6. DON'T ALLOW LATER CHAPTERS TO BECOME TOO SMALL
+--------------------------------------------------------- */
+
+#chapter7 .story-text,
+#chapter8 .story-text,
+#chapter9 .story-text,
+#chapter10 .story-text {
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+#chapter7 .handwritten-note,
+#chapter8 .handwritten-note,
+#chapter9 .handwritten-note,
+#chapter10 .handwritten-note {
+    font-size: 0.78rem;
+}
+
+
+/* ---------------------------------------------------------
+   7. KEEP SCRAPBOOK PHOTO ROTATION
+   Photos can be messy — text shouldn't be.
+--------------------------------------------------------- */
+
+.scrapbook-photo,
+.mini-screenshot,
+.chapter5-night-photo,
+.chapter6-big-photo,
+.chapter6-hero-photo,
+.chapter6-little-photo,
+.chapter7-moving-photo,
+.chapter7-main-photo,
+.chapter8-photo,
+.chapter8-hero-photo,
+.chapter8-small-photo,
+.chapter9-photo,
+.chapter9-home-photo,
+.chapter10-future-photo {
+    transform-origin: center center;
+}
+
+
+/* =========================================================
+   FINAL SCRAPBOOK POLISH — CONSISTENT HEADINGS + RANDOM-LOOK
+   PAGE DECORATIONS
+
+   This section intentionally lives at the VERY BOTTOM so it
+   overrides older chapter-specific spacing rules.
+========================================================= */
+
+/* Remove the old decorations outside the book. */
+.book-body::before,
+.book-body::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Restore/keep the physical centre fold. */
+.book::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    right: auto !important;
+    width: 2px !important;
+    height: auto !important;
+    background: rgba(80, 50, 40, 0.13) !important;
+    box-shadow: 0 0 14px rgba(70, 40, 30, 0.20) !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Every page keeps the same warm scrapbook paper. */
+.book-page {
+    background-color: #fbf5ea !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+}
+
+/* Keep text/photos above the decorative paper. */
+.book-page .page-content,
+.book-page .chapter-right-content,
+.book-page .page-number {
+    position: relative;
+    z-index: 2;
+}
+
+/* ---------------------------------------------------------
+   CONSISTENT CHAPTER-HEADING SPACING
+--------------------------------------------------------- */
+
+.book-page .chapter-number {
+    display: block !important;
+    margin: 0 0 14px 0 !important;
+    font-size: 0.74rem !important;
+    line-height: 1.2 !important;
+}
+
+.book-page.left-page h2 {
+    margin: 0 0 22px 0 !important;
+    font-size: 2.35rem !important;
+    line-height: 1.08 !important;
+}
+
+/* The first item after every chapter title starts consistently. */
+.book-page.left-page h2 + .story-date,
+.book-page.left-page h2 + .story-text,
+.book-page.left-page h2 + p,
+.book-page.left-page h2 + div {
+    margin-top: 0 !important;
+}
+
+/* Right-page introductory headings are consistent too. */
+.book-page.right-page .little-heading:first-child {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+}
+
+/* Text stays straight; photos may keep their scrapbook tilt. */
+.book-page p,
+.book-page h2,
+.book-page h3,
+.book-page .story-date,
+.book-page .little-heading,
+.book-page .handwritten-note,
+.book-page .final-quote,
+.book-page .denial-line {
+    text-decoration-thickness: auto;
+}
+
+.book-page .handwritten-note,
+.book-page .final-quote,
+.book-page .denial-line {
+    transform: none !important;
+}
+
+
+/* Different decoration layout for every individual page */
+
+#chapter1 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%226%%22%20y=%228%%22%20font-size=%2221%22%20opacity=%220.2%22%20transform=%22rotate(16%206%208)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2292%%22%20y=%2220%%22%20font-size=%2223%22%20opacity=%220.16%22%20transform=%22rotate(-4%2092%2020)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%225%%22%20y=%2246%%22%20font-size=%2223%22%20opacity=%220.2%22%20transform=%22rotate(5%205%2046)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2288%%22%20y=%2246%%22%20font-size=%2221%22%20opacity=%220.16%22%20transform=%22rotate(-9%2088%2046)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2211%%22%20y=%2277%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(1%2011%2077)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2287%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(-18%2094%2087)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2251%%22%20y=%2295%%22%20font-size=%2219%22%20opacity=%220.24%22%20transform=%22rotate(9%2051%2095)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter1 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2211%%22%20y=%227%%22%20font-size=%2217%22%20opacity=%220.16%22%20transform=%22rotate(9%2011%207)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2283%%22%20y=%2222%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-14%2083%2022)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2235%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(2%2014%2035)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2286%%22%20y=%2246%%22%20font-size=%2221%22%20opacity=%220.16%22%20transform=%22rotate(-8%2086%2046)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%225%%22%20y=%2280%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(5%205%2080)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2286%%22%20y=%2277%%22%20font-size=%2222%22%20opacity=%220.18%22%20transform=%22rotate(-16%2086%2077)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2258%%22%20y=%2295%%22%20font-size=%2220%22%20opacity=%220.2%22%20transform=%22rotate(-5%2058%2095)%22%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter2 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2215%%22%20y=%2218%%22%20font-size=%2219%22%20opacity=%220.2%22%20transform=%22rotate(0%2015%2018)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2288%%22%20y=%2213%%22%20font-size=%2219%22%20opacity=%220.24%22%20transform=%22rotate(17%2088%2013)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2215%%22%20y=%2254%%22%20font-size=%2223%22%20opacity=%220.24%22%20transform=%22rotate(12%2015%2054)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2238%%22%20font-size=%2224%22%20opacity=%220.18%22%20transform=%22rotate(1%2094%2038)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%227%%22%20y=%2290%%22%20font-size=%2221%22%20opacity=%220.22%22%20transform=%22rotate(-3%207%2090)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2290%%22%20y=%2283%%22%20font-size=%2224%22%20opacity=%220.2%22%20transform=%22rotate(-1%2090%2083)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2237%%22%20y=%2291%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-2%2037%2091)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter2 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%226%%22%20y=%2217%%22%20font-size=%2223%22%20opacity=%220.24%22%20transform=%22rotate(4%206%2017)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2292%%22%20y=%227%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(-17%2092%207)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2211%%22%20y=%2248%%22%20font-size=%2218%22%20opacity=%220.2%22%20transform=%22rotate(17%2011%2048)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2289%%22%20y=%2260%%22%20font-size=%2217%22%20opacity=%220.16%22%20transform=%22rotate(12%2089%2060)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%227%%22%20y=%2283%%22%20font-size=%2224%22%20opacity=%220.2%22%20transform=%22rotate(6%207%2083)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2288%%22%20y=%2274%%22%20font-size=%2224%22%20opacity=%220.24%22%20transform=%22rotate(-3%2088%2074)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2247%%22%20y=%2295%%22%20font-size=%2224%22%20opacity=%220.22%22%20transform=%22rotate(16%2047%2095)%22%3E%E2%99%A5%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter3 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%226%%22%20y=%2211%%22%20font-size=%2217%22%20opacity=%220.16%22%20transform=%22rotate(1%206%2011)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2222%%22%20font-size=%2221%22%20opacity=%220.22%22%20transform=%22rotate(6%2085%2022)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%223%%22%20y=%2243%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(4%203%2043)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2243%%22%20font-size=%2221%22%20opacity=%220.16%22%20transform=%22rotate(-6%2085%2043)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2220%%22%20y=%2284%%22%20font-size=%2217%22%20opacity=%220.22%22%20transform=%22rotate(17%2020%2084)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2289%%22%20font-size=%2221%22%20opacity=%220.18%22%20transform=%22rotate(-3%2085%2089)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2250%%22%20y=%2296%%22%20font-size=%2223%22%20opacity=%220.24%22%20transform=%22rotate(-18%2050%2096)%22%3E%F0%9F%92%8B%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter3 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2217%%22%20y=%2212%%22%20font-size=%2217%22%20opacity=%220.22%22%20transform=%22rotate(-17%2017%2012)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2280%%22%20y=%2221%%22%20font-size=%2217%22%20opacity=%220.2%22%20transform=%22rotate(-5%2080%2021)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2211%%22%20y=%2250%%22%20font-size=%2223%22%20opacity=%220.22%22%20transform=%22rotate(-6%2011%2050)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2293%%22%20y=%2244%%22%20font-size=%2218%22%20opacity=%220.24%22%20transform=%22rotate(15%2093%2044)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%228%%22%20y=%2276%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(-7%208%2076)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2288%%22%20y=%2282%%22%20font-size=%2225%22%20opacity=%220.22%22%20transform=%22rotate(13%2088%2082)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2236%%22%20y=%2289%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-11%2036%2089)%22%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter4 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%226%%22%20y=%2214%%22%20font-size=%2222%22%20opacity=%220.22%22%20transform=%22rotate(-1%206%2014)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2216%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(-2%2085%2016)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2239%%22%20font-size=%2220%22%20opacity=%220.16%22%20transform=%22rotate(-4%2014%2039)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2290%%22%20y=%2244%%22%20font-size=%2221%22%20opacity=%220.22%22%20transform=%22rotate(6%2090%2044)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2215%%22%20y=%2286%%22%20font-size=%2224%22%20opacity=%220.22%22%20transform=%22rotate(8%2015%2086)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2290%%22%20y=%2277%%22%20font-size=%2224%22%20opacity=%220.22%22%20transform=%22rotate(-4%2090%2077)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2255%%22%20y=%2289%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(18%2055%2089)%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter4 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2216%%22%20y=%2217%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-9%2016%2017)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2211%%22%20font-size=%2218%22%20opacity=%220.16%22%20transform=%22rotate(-9%2094%2011)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2211%%22%20y=%2243%%22%20font-size=%2219%22%20opacity=%220.22%22%20transform=%22rotate(-9%2011%2043)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2247%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(-15%2094%2047)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%228%%22%20y=%2274%%22%20font-size=%2224%22%20opacity=%220.16%22%20transform=%22rotate(7%208%2074)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2284%%22%20y=%2275%%22%20font-size=%2218%22%20opacity=%220.2%22%20transform=%22rotate(-5%2084%2075)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2259%%22%20y=%2292%%22%20font-size=%2217%22%20opacity=%220.16%22%20transform=%22rotate(3%2059%2092)%22%3E%E2%99%A1%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter5 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2215%%22%20y=%225%%22%20font-size=%2219%22%20opacity=%220.16%22%20transform=%22rotate(9%2015%205)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2289%%22%20y=%2212%%22%20font-size=%2224%22%20opacity=%220.24%22%20transform=%22rotate(6%2089%2012)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2212%%22%20y=%2255%%22%20font-size=%2218%22%20opacity=%220.24%22%20transform=%22rotate(11%2012%2055)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2291%%22%20y=%2250%%22%20font-size=%2219%22%20opacity=%220.18%22%20transform=%22rotate(-5%2091%2050)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2215%%22%20y=%2285%%22%20font-size=%2222%22%20opacity=%220.2%22%20transform=%22rotate(-8%2015%2085)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2289%%22%20y=%2286%%22%20font-size=%2219%22%20opacity=%220.16%22%20transform=%22rotate(6%2089%2086)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2241%%22%20y=%2291%%22%20font-size=%2217%22%20opacity=%220.24%22%20transform=%22rotate(11%2041%2091)%22%3E%E2%9C%A8%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter5 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2215%%22%20y=%2214%%22%20font-size=%2220%22%20opacity=%220.22%22%20transform=%22rotate(8%2015%2014)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2286%%22%20y=%2217%%22%20font-size=%2220%22%20opacity=%220.2%22%20transform=%22rotate(-8%2086%2017)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2252%%22%20font-size=%2220%22%20opacity=%220.24%22%20transform=%22rotate(-6%2014%2052)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2252%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(-3%2085%2052)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%226%%22%20y=%2278%%22%20font-size=%2218%22%20opacity=%220.18%22%20transform=%22rotate(12%206%2078)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2281%%22%20font-size=%2218%22%20opacity=%220.24%22%20transform=%22rotate(5%2085%2081)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2245%%22%20y=%2290%%22%20font-size=%2219%22%20opacity=%220.24%22%20transform=%22rotate(3%2045%2090)%22%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter6 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2210%%22%20y=%2214%%22%20font-size=%2217%22%20opacity=%220.18%22%20transform=%22rotate(8%2010%2014)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2222%%22%20font-size=%2225%22%20opacity=%220.24%22%20transform=%22rotate(-9%2094%2022)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2258%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(6%2014%2058)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2249%%22%20font-size=%2218%22%20opacity=%220.22%22%20transform=%22rotate(-2%2094%2049)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2216%%22%20y=%2287%%22%20font-size=%2223%22%20opacity=%220.2%22%20transform=%22rotate(-12%2016%2087)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2279%%22%20y=%2282%%22%20font-size=%2223%22%20opacity=%220.2%22%20transform=%22rotate(-10%2079%2082)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2236%%22%20y=%2288%%22%20font-size=%2223%22%20opacity=%220.18%22%20transform=%22rotate(-1%2036%2088)%22%3E%E2%9C%A8%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter6 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2216%%22%20y=%229%%22%20font-size=%2224%22%20opacity=%220.24%22%20transform=%22rotate(10%2016%209)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2287%%22%20y=%2213%%22%20font-size=%2219%22%20opacity=%220.18%22%20transform=%22rotate(1%2087%2013)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2246%%22%20font-size=%2224%22%20opacity=%220.22%22%20transform=%22rotate(13%2014%2046)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2290%%22%20y=%2245%%22%20font-size=%2217%22%20opacity=%220.18%22%20transform=%22rotate(-8%2090%2045)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2218%%22%20y=%2286%%22%20font-size=%2218%22%20opacity=%220.18%22%20transform=%22rotate(-6%2018%2086)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2291%%22%20y=%2284%%22%20font-size=%2217%22%20opacity=%220.18%22%20transform=%22rotate(-13%2091%2084)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2235%%22%20y=%2294%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-7%2035%2094)%22%3E%F0%9F%92%8B%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter7 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%229%%22%20y=%2211%%22%20font-size=%2221%22%20opacity=%220.18%22%20transform=%22rotate(-12%209%2011)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2280%%22%20y=%229%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(10%2080%209)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2216%%22%20y=%2241%%22%20font-size=%2220%22%20opacity=%220.2%22%20transform=%22rotate(-4%2016%2041)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2256%%22%20font-size=%2217%22%20opacity=%220.24%22%20transform=%22rotate(9%2094%2056)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2217%%22%20y=%2276%%22%20font-size=%2221%22%20opacity=%220.18%22%20transform=%22rotate(-1%2017%2076)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2286%%22%20y=%2278%%22%20font-size=%2224%22%20opacity=%220.18%22%20transform=%22rotate(-4%2086%2078)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2258%%22%20y=%2294%%22%20font-size=%2223%22%20opacity=%220.24%22%20transform=%22rotate(-15%2058%2094)%22%3E%F0%9F%92%8B%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter7 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%225%%22%20y=%2214%%22%20font-size=%2218%22%20opacity=%220.22%22%20transform=%22rotate(7%205%2014)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2281%%22%20y=%2214%%22%20font-size=%2217%22%20opacity=%220.18%22%20transform=%22rotate(-8%2081%2014)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2211%%22%20y=%2245%%22%20font-size=%2223%22%20opacity=%220.2%22%20transform=%22rotate(-1%2011%2045)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2240%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(5%2085%2040)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2220%%22%20y=%2274%%22%20font-size=%2219%22%20opacity=%220.22%22%20transform=%22rotate(-17%2020%2074)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2284%%22%20y=%2277%%22%20font-size=%2222%22%20opacity=%220.18%22%20transform=%22rotate(7%2084%2077)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2248%%22%20y=%2295%%22%20font-size=%2218%22%20opacity=%220.16%22%20transform=%22rotate(-18%2048%2095)%22%3E%E2%99%A1%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter8 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2216%%22%20y=%229%%22%20font-size=%2221%22%20opacity=%220.24%22%20transform=%22rotate(-8%2016%209)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2279%%22%20y=%2214%%22%20font-size=%2222%22%20opacity=%220.18%22%20transform=%22rotate(-9%2079%2014)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%225%%22%20y=%2251%%22%20font-size=%2217%22%20opacity=%220.24%22%20transform=%22rotate(-14%205%2051)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2283%%22%20y=%2242%%22%20font-size=%2224%22%20opacity=%220.2%22%20transform=%22rotate(-4%2083%2042)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%225%%22%20y=%2277%%22%20font-size=%2219%22%20opacity=%220.16%22%20transform=%22rotate(-18%205%2077)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2272%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(15%2094%2072)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2240%%22%20y=%2290%%22%20font-size=%2219%22%20opacity=%220.24%22%20transform=%22rotate(7%2040%2090)%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter8 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2213%%22%20y=%227%%22%20font-size=%2221%22%20opacity=%220.16%22%20transform=%22rotate(-14%2013%207)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2278%%22%20y=%2218%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(7%2078%2018)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2210%%22%20y=%2244%%22%20font-size=%2217%22%20opacity=%220.16%22%20transform=%22rotate(18%2010%2044)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2295%%22%20y=%2249%%22%20font-size=%2223%22%20opacity=%220.16%22%20transform=%22rotate(8%2095%2049)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2218%%22%20y=%2280%%22%20font-size=%2225%22%20opacity=%220.22%22%20transform=%22rotate(12%2018%2080)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2291%%22%20y=%2286%%22%20font-size=%2219%22%20opacity=%220.18%22%20transform=%22rotate(-15%2091%2086)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2247%%22%20y=%2294%%22%20font-size=%2219%22%20opacity=%220.16%22%20transform=%22rotate(-8%2047%2094)%22%3E%F0%9F%92%8B%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter9 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%228%%22%20y=%2212%%22%20font-size=%2220%22%20opacity=%220.16%22%20transform=%22rotate(-12%208%2012)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2288%%22%20y=%229%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(-2%2088%209)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%223%%22%20y=%2257%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(-17%203%2057)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2289%%22%20y=%2252%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(11%2089%2052)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2212%%22%20y=%2291%%22%20font-size=%2222%22%20opacity=%220.22%22%20transform=%22rotate(6%2012%2091)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2293%%22%20y=%2283%%22%20font-size=%2219%22%20opacity=%220.2%22%20transform=%22rotate(-17%2093%2083)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2247%%22%20y=%2288%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(-5%2047%2088)%22%3E%E2%99%A1%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter9 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2212%%22%20y=%2210%%22%20font-size=%2222%22%20opacity=%220.24%22%20transform=%22rotate(5%2012%2010)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2292%%22%20y=%2220%%22%20font-size=%2225%22%20opacity=%220.22%22%20transform=%22rotate(2%2092%2020)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3Ctext%20x=%2212%%22%20y=%2250%%22%20font-size=%2223%22%20opacity=%220.16%22%20transform=%22rotate(1%2012%2050)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2294%%22%20y=%2260%%22%20font-size=%2222%22%20opacity=%220.2%22%20transform=%22rotate(-15%2094%2060)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2210%%22%20y=%2279%%22%20font-size=%2217%22%20opacity=%220.18%22%20transform=%22rotate(-6%2010%2079)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2284%%22%20y=%2278%%22%20font-size=%2224%22%20opacity=%220.24%22%20transform=%22rotate(3%2084%2078)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2261%%22%20y=%2296%%22%20font-size=%2217%22%20opacity=%220.2%22%20transform=%22rotate(8%2061%2096)%22%3E%F0%9F%92%8C%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter10 .book-page.left-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2213%%22%20y=%2211%%22%20font-size=%2218%22%20opacity=%220.2%22%20transform=%22rotate(12%2013%2011)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2287%%22%20y=%2211%%22%20font-size=%2218%22%20opacity=%220.16%22%20transform=%22rotate(14%2087%2011)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2212%%22%20y=%2242%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(11%2012%2042)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%2282%%22%20y=%2245%%22%20font-size=%2223%22%20opacity=%220.18%22%20transform=%22rotate(-12%2082%2045)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2214%%22%20y=%2284%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(-1%2014%2084)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2283%%22%20y=%2284%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(-1%2083%2084)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2265%%22%20y=%2291%%22%20font-size=%2223%22%20opacity=%220.18%22%20transform=%22rotate(-18%2065%2091)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E") !important;
+}
+
+#chapter10 .book-page.right-page {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22600%22%20height=%22820%22%20viewBox=%220%200%20600%20820%22%3E%3Ctext%20x=%2212%%22%20y=%225%%22%20font-size=%2222%22%20opacity=%220.16%22%20transform=%22rotate(-18%2012%205)%22%3E%E2%9C%A6%3C/text%3E%3Ctext%20x=%2278%%22%20y=%2220%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(11%2078%2020)%22%3E%E2%99%A5%3C/text%3E%3Ctext%20x=%225%%22%20y=%2246%%22%20font-size=%2225%22%20opacity=%220.18%22%20transform=%22rotate(-10%205%2046)%22%3E%F0%9F%92%8B%3C/text%3E%3Ctext%20x=%2286%%22%20y=%2238%%22%20font-size=%2220%22%20opacity=%220.18%22%20transform=%22rotate(11%2086%2038)%22%3E%E2%99%A1%3C/text%3E%3Ctext%20x=%2218%%22%20y=%2276%%22%20font-size=%2225%22%20opacity=%220.22%22%20transform=%22rotate(18%2018%2076)%22%3E%E2%9C%A8%3C/text%3E%3Ctext%20x=%2285%%22%20y=%2272%%22%20font-size=%2218%22%20opacity=%220.2%22%20transform=%22rotate(3%2085%2072)%22%3E%F0%9F%92%8C%3C/text%3E%3Ctext%20x=%2265%%22%20y=%2296%%22%20font-size=%2225%22%20opacity=%220.16%22%20transform=%22rotate(-6%2065%2096)%22%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E") !important;
+}
+
+/* =========================================================
+   FINAL BOOK REFINEMENT — LARGE BOOK / READABILITY / FOOTERS
+   Keep this block LAST. It deliberately overrides earlier
+   chapter-specific sizing without changing the scrapbook art.
+========================================================= */
+
+/* ---------- LARGER DESKTOP BOOK ---------- */
+@media (min-width: 1100px) {
+    .book {
+        width: min(1480px, 96vw) !important;
+        height: 860px !important;
+    }
+
+    .book-page {
+        padding: 48px 64px 54px !important;
+    }
+}
+
+/* ---------- READABILITY ---------- */
+/* Main prose is now slightly larger and consistent. */
+.book-page .story-text {
+    font-size: 1.02rem !important;
+    line-height: 1.52 !important;
+}
+
+/* Supporting copy should never become microscopic. */
+.book-page .tiny-story,
+.book-page .chapter-ending,
+.book-page .party-ending,
+.book-page .chapter4-ending,
+.book-page .chapter5-ending,
+.book-page .next-morning,
+.book-page .chapter10-intro {
+    font-size: 0.82rem !important;
+    line-height: 1.42 !important;
+}
+
+.book-page .handwritten-note {
+    font-size: 0.96rem !important;
+    line-height: 1.42 !important;
+}
+
+/* Keep the chapter openings visually identical. */
+.book-page .chapter-number {
+    display: block !important;
+    margin: 0 0 14px 0 !important;
+    font-size: 0.76rem !important;
+    line-height: 1.2 !important;
+}
+
+.book-page.left-page h2 {
+    margin: 0 0 22px 0 !important;
+    font-size: 2.45rem !important;
+    line-height: 1.08 !important;
+}
+
+/* ---------- CORRECT PAGE NUMBERS / FOOTERS ---------- */
+/* The page number belongs to the OUTER bottom corner of each page. */
+.book-page > .page-number {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    z-index: 20 !important;
+    font-size: 0.74rem !important;
+    line-height: 1 !important;
+    color: #9c8379 !important;
+}
+
+.book-page.left-page > .page-number {
+    left: 28px !important;
+    right: auto !important;
+    text-align: left !important;
+}
+
+.book-page.right-page > .page-number {
+    right: 28px !important;
+    left: auto !important;
+    text-align: right !important;
+}
+
+/* ---------- CHAPTER 4: USE THE EMPTY SPACE ---------- */
+/* Page 7 has less copy, so its Killiney photo can breathe. */
+#chapter4 .left-page .chapter4-memory {
+    min-height: 225px !important;
+    margin-bottom: 18px !important;
+}
+
+#chapter4 .left-page .chapter4-small-photo {
+    right: 20px !important;
+    top: 20px !important;
+}
+
+#chapter4 .left-page .chapter4-small-photo-inner {
+    width: 190px !important;
+    height: 180px !important;
+}
+
+/* Make the real image fill the enlarged Polaroid if this class is present. */
+#chapter4 .left-page .chapter4-killiney-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- REAL BOOK PAGE-TURN FEEL ---------- */
+/*
+   The existing JS adds/removes .active.
+   These animations therefore run whenever a new spread becomes active.
+   The outer edge travels toward the centre fold, with perspective,
+   rather than the old flat left/right slide.
+*/
+.book-body {
+    perspective: 2200px;
+}
+
+.story-wrapper {
+    perspective: 2200px;
+}
+
+.book-spread.active .left-page {
+    transform-origin: right center !important;
+    backface-visibility: hidden;
+    animation: realPageLeft 0.78s cubic-bezier(.22,.72,.22,1) both !important;
+}
+
+.book-spread.active .right-page {
+    transform-origin: left center !important;
+    backface-visibility: hidden;
+    animation: realPageRight 0.78s cubic-bezier(.22,.72,.22,1) both !important;
+}
+
+/* Disable the old inner-content slide animations so they do not fight
+   with the page-turn animation. */
+.book-spread.active .left-page .page-content,
+.book-spread.active .right-page .chapter-right-content {
+    animation: none !important;
+}
+
+@keyframes realPageLeft {
+    0% {
+        opacity: .35;
+        transform: perspective(1800px) rotateY(10deg) translateX(10px);
+        box-shadow: inset -35px 0 38px -34px rgba(60,40,30,.55);
+    }
+    55% {
+        opacity: 1;
+        transform: perspective(1800px) rotateY(-2deg) translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1800px) rotateY(0deg) translateX(0);
+        box-shadow: inset -14px 0 25px -22px rgba(60,40,30,.6);
+    }
+}
+
+@keyframes realPageRight {
+    0% {
+        opacity: .35;
+        transform: perspective(1800px) rotateY(-13deg) translateX(-12px);
+        box-shadow: inset 35px 0 38px -34px rgba(60,40,30,.55);
+    }
+    55% {
+        opacity: 1;
+        transform: perspective(1800px) rotateY(2deg) translateX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1800px) rotateY(0deg) translateX(0);
+        box-shadow: inset 14px 0 25px -22px rgba(60,40,30,.6);
+    }
+}
+
+/* Keep the fold crisp while the pages animate. */
+.book::after {
+    z-index: 50 !important;
+}
+
+/* ---------- NAVIGATION ---------- */
+.book-navigation {
+    margin-top: 20px !important;
+    min-height: 48px;
+}
+
+/* ---------- LAPTOP SAFETY ----------
+   On shorter laptop screens, preserve width/readability but reduce the
+   vertical footprint enough to keep navigation reachable.
+*/
+@media (min-width: 1100px) and (max-height: 900px) {
+    .book {
+        height: 800px !important;
+    }
+
+    .book-body {
+        padding-top: 34px !important;
+        padding-bottom: 64px !important;
+    }
+
+    .book-page {
+        padding-top: 42px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .book-page.left-page h2 {
+        font-size: 2.30rem !important;
+        margin-bottom: 19px !important;
+    }
+
+    .book-page .story-text {
+        font-size: 0.96rem !important;
+    }
+
+    #chapter4 .left-page .chapter4-memory {
+        min-height: 205px !important;
+    }
+
+    #chapter4 .left-page .chapter4-small-photo-inner {
+        width: 175px !important;
+        height: 165px !important;
+    }
+}
+
+/* ---------- MOBILE/TABLET ----------
+   Do not let the desktop enlargement override the existing compact layout.
+*/
+@media (max-width: 1099px) {
+    .book-page > .page-number {
+        bottom: 14px !important;
+    }
+
+    .book-page.left-page > .page-number {
+        left: 18px !important;
+    }
+
+    .book-page.right-page > .page-number {
+        right: 18px !important;
+    }
+}
+
+
+/* =========================================================
+   PAGE 7 + FOOTER POSITION CORRECTION
+   Added after visual review
+========================================================= */
+
+/* Keep each page's content box the full height of the paper.
+   This also makes page-number positioning reliable even if a
+   page-number span accidentally sits inside a content wrapper. */
+.book-page .page-content,
+.book-page .chapter-right-content {
+    min-height: 100% !important;
+}
+
+/* Force ALL page numbers to the physical bottom outer corner,
+   whether the span is a direct child or nested in the content. */
+.book-page .page-number {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    z-index: 30 !important;
+    font-size: 0.74rem !important;
+    line-height: 1 !important;
+    color: #9c8379 !important;
+}
+
+.book-page.left-page .page-number {
+    left: 28px !important;
+    right: auto !important;
+}
+
+.book-page.right-page .page-number {
+    right: 28px !important;
+    left: auto !important;
+}
+
+/* PAGE 7:
+   Give the larger Killiney Polaroid enough vertical room so the
+   Temple Bar divider begins BELOW the photo instead of crossing it. */
+#chapter4 .left-page .chapter4-memory {
+    min-height: 255px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Keep the enlarged photo comfortably inside that memory section. */
+#chapter4 .left-page .chapter4-small-photo {
+    right: 20px !important;
+    top: 20px !important;
+}
+
+/* Push the Temple Bar divider a little farther below the photo. */
+#chapter4 .left-page .chapter4-temple {
+    padding-top: 18px !important;
+    margin-top: 4px !important;
+    border-top: 1px solid #ddc8bd !important;
+}
+
+/* Short-screen version: still leave a visible gap below the photo. */
+@media (min-width: 1100px) and (max-height: 900px) {
+    #chapter4 .left-page .chapter4-memory {
+        min-height: 235px !important;
+        margin-bottom: 18px !important;
+    }
+
+    #chapter4 .left-page .chapter4-temple {
+        padding-top: 16px !important;
+        margin-top: 3px !important;
+    }
+}
+/* =========================================================
+   EXTRA SCRAPBOOK PAPER DECORATIONS
+========================================================= */
+
+.book-page::before,
+.book-page::after {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+
+    font-family: Georgia, serif;
+
+    opacity: 0.28;
+}
+
+
+/* LEFT PAGES — extra decoration cluster */
+
+.book-page.left-page::before {
+    content: "♡     ✦     💋";
+
+    left: 8%;
+    bottom: 20%;
+
+    width: 75%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.25rem;
+
+    transform: rotate(-3deg);
+}
+
+
+.book-page.left-page::after {
+    content: "✨        ♥";
+
+    left: 17%;
+    top: 62%;
+
+    width: 68%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.05rem;
+
+    color: #c77987;
+
+    transform: rotate(2deg);
+}
+
+
+/* RIGHT PAGES — different arrangement */
+
+.book-page.right-page::before {
+    content: "💌        ♡       ✦";
+
+    left: 9%;
+    bottom: 18%;
+
+    width: 78%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.15rem;
+
+    transform: rotate(2deg);
+}
+
+
+.book-page.right-page::after {
+    content: "♥        💋";
+
+    left: 15%;
+    top: 67%;
+
+    width: 72%;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.15rem;
+
+    color: #c77987;
+
+    transform: rotate(-2deg);
+}
+/* =========================================================
+   CHAPTER 4 — PAGE 7 PHOTO + DIVIDER FINAL ADJUSTMENT
+========================================================= */
+
+/* Give the Killiney photo more presence */
+#chapter4 .chapter4-small-photo {
+    width: 225px !important;
+    height: 175px !important;
+
+    margin: 22px auto 0 !important;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Make the actual photo fill the larger frame */
+#chapter4 .chapter4-small-photo img,
+#chapter4 .chapter4-killiney-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* Move Temple Bar section + its top line slightly DOWN */
+#chapter4 .chapter4-temple {
+    margin-top: 38px !important;
+    padding-top: 24px !important;
+
+    position: relative;
+}
+
+
+/* Draw a clean horizontal divider above Temple Bar */
+#chapter4 .chapter4-temple::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: #ddc8bd;
+
+    transform: none !important;
+}
+/* =========================================================
+   CHAPTER 4 — PAGE 7 CLEAN FINAL LAYOUT
+========================================================= */
+
+/* Killiney section */
+#chapter4 .left-page .chapter4-memory {
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 28px !important;
+
+    border-bottom: 1px solid #ddc8bd !important;
+}
+
+
+/* Bigger Killiney photo */
+#chapter4 .left-page .chapter4-small-photo {
+    width: 250px !important;
+    height: 185px !important;
+
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+
+    margin: 20px auto 0 !important;
+
+    z-index: 3 !important;
+}
+
+
+/* Real image fills the Polaroid */
+#chapter4 .left-page .chapter4-small-photo img,
+#chapter4 .left-page .chapter4-killiney-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    display: block !important;
+}
+
+
+/* Temple Bar begins AFTER the photo + divider */
+#chapter4 .left-page .chapter4-temple {
+    position: relative !important;
+
+    margin-top: 20px !important;
+    padding-top: 0 !important;
+
+    border-top: none !important;
+}
+
+
+/* Remove the extra generated line */
+#chapter4 .left-page .chapter4-temple::before {
+    content: none !important;
+    display: none !important;
+}
+/* =========================================================
+   CHAPTER 2 — PAGE 3 BIGGER PHOTOS
+========================================================= */
+
+#chapter2 .mini-photo-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    gap: 28px !important;
+
+    margin: 14px auto 10px !important;
+}
+
+
+/* Base photo frame */
+#chapter2 .mini-screenshot {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+
+/* LEFT — Barber chat screenshot */
+#chapter2 .mini-screenshot:first-child {
+    width: 185px !important;
+    height: 245px !important;
+
+    transform: rotate(-2deg);
+}
+
+
+/* RIGHT — Haircut / meeting photo */
+#chapter2 .mini-screenshot.second-mini {
+    width: 220px !important;
+    height: 190px !important;
+
+    transform: rotate(2deg);
+}
+
+
+/* Fill the frames */
+#chapter2 .chapter2-mini-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+}
+
+
+/* Don't crop the chat screenshot */
+#chapter2 .mini-screenshot:first-child .chapter2-mini-image {
+    object-fit: contain !important;
+}
+
+
+/* Zoom the actual meeting photo slightly */
+#chapter2 .second-mini .chapter2-mini-image {
+    object-fit: cover !important;
+    object-position: center !important;
+
+    transform: scale(1.08);
+}
+
+
+/* Keep the text underneath close to the photos */
+#chapter2 .mini-photo-row + .handwritten-note {
+    margin-top: 8px !important;
+}
+/* Chapter 8 — reposition photo INSIDE the top frame */
+
+#chapter8 .chapter8-hero-image {
+    object-fit: cover !important;
+
+    /* Shows more of the TOP of the original photo */
+    object-position: center 30% !important;
+}
+/* =========================================================
+   CHAPTER 6 — PAGE 12 LARGER PHOTOS
+========================================================= */
+
+/* Dún Laoghaire main photo */
+#chapter6 .chapter6-hero-photo {
+    width: 310px;
+    height: 215px;
+    margin: 14px auto 20px;
+}
+
+#chapter6 .chapter6-hero-photo img,
+#chapter6 .chapter6-hero-photo-inner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Beer + pizza photo */
+#chapter6 .chapter6-little-photo {
+    width: 210px;
+    height: 150px;
+    margin: 16px auto 18px;
+}
+
+#chapter6 .chapter6-little-photo img,
+#chapter6 .chapter6-little-photo-inner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* =========================================================
+   CHAPTER 9 — PAGE 17 BIGGER CORK COLLAGE
+========================================================= */
+
+#chapter9 .chapter9-cork-collage {
+    width: 500px !important;
+    height: 285px !important;
+
+    margin: 22px auto 18px !important;
+
+    position: relative !important;
+}
+
+
+/* Top-left photo */
+#chapter9 .cork-photo-one {
+    width: 210px !important;
+    height: 165px !important;
+
+    left: 25px !important;
+    top: 0 !important;
+}
+
+
+/* Top-right photo */
+#chapter9 .cork-photo-two {
+    width: 210px !important;
+    height: 165px !important;
+
+    right: 25px !important;
+    top: 0 !important;
+}
+
+
+/* Centre/front group photo */
+#chapter9 .cork-photo-three {
+    width: 215px !important;
+    height: 155px !important;
+
+    left: 50% !important;
+    top: 115px !important;
+
+    transform: translateX(-50%) rotate(-1deg) !important;
+
+    z-index: 5 !important;
+}
+
+
+/* Make real images fill their larger frames */
+#chapter9 .chapter9-cork-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    display: block !important;
+}
+/* ===== SPIRAL SCRAPBOOK TEST LAYER ===== */
+.scrapbook-closed{overflow:hidden}
+.scrapbook-intro{position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:34px;background:radial-gradient(circle at 18% 16%,rgba(255,255,255,.72),transparent 24%),radial-gradient(circle at 82% 82%,rgba(190,92,110,.18),transparent 26%),linear-gradient(135deg,#f7e6e3,#e9cfc8 52%,#f5ddda);perspective:2200px;transition:opacity .35s ease,visibility .35s ease}
+.scrapbook-intro.finished{opacity:0;visibility:hidden;pointer-events:none}
+.closed-scrapbook{width:min(650px,78vw);height:min(790px,82vh);position:relative;transform-style:preserve-3d;filter:drop-shadow(0 30px 30px rgba(72,39,37,.25))}
+.scrapbook-cover{width:100%;height:100%;position:relative;overflow:hidden;transform-origin:left center;transform-style:preserve-3d;border-radius:10px 18px 18px 10px;border:1px solid rgba(121,78,72,.16);background:radial-gradient(circle at 12% 18%,rgba(255,255,255,.7),transparent 18%),radial-gradient(circle at 88% 80%,rgba(204,115,127,.16),transparent 20%),repeating-linear-gradient(0deg,rgba(105,72,61,.018) 0 1px,transparent 1px 5px),#f5e5dd;box-shadow:inset 18px 0 30px rgba(91,57,49,.08),0 18px 40px rgba(71,40,35,.22)}
+.scrapbook-cover:before{content:"";position:absolute;inset:18px;border:1px dashed rgba(166,94,106,.34);border-radius:7px 14px 14px 7px}
+.cover-title{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#60443e}
+.cover-title small{margin-bottom:5px;letter-spacing:5px;font-size:.76rem;color:#a65f6c}.cover-title h1{margin:0;font-size:clamp(4rem,8vw,6.4rem);line-height:.95;font-weight:normal;font-style:italic;color:#9f5967}.cover-title p{margin:22px 0 7px;font-size:1.18rem}.cover-title>span{font-size:.82rem;font-style:italic;color:#9a746d}
+.cover-doodles span{position:absolute;z-index:2;opacity:.7;font-size:1.65rem}.cover-doodles span:nth-child(1){left:13%;top:14%;transform:rotate(-12deg)}.cover-doodles span:nth-child(2){right:13%;top:17%;transform:rotate(9deg)}.cover-doodles span:nth-child(3){left:17%;bottom:18%;transform:rotate(7deg)}.cover-doodles span:nth-child(4){right:15%;bottom:15%;transform:rotate(-8deg)}.cover-doodles span:nth-child(5){right:20%;top:48%;transform:rotate(5deg)}
+.cover-spiral{position:absolute;z-index:10;left:-25px;top:22px;bottom:22px;width:52px;display:flex;flex-direction:column;justify-content:space-around;pointer-events:none}.cover-spiral span{width:46px;height:18px;display:block;border:4px solid #8e8580;border-right-width:5px;border-radius:50%;box-shadow:0 2px 2px rgba(50,35,30,.18);transform:rotate(-5deg)}
+.ribbon{position:absolute;z-index:6;pointer-events:none;background:linear-gradient(90deg,#a94f61,#c66c7d 45%,#a94f61);box-shadow:0 2px 8px rgba(85,39,48,.18)}.ribbon-vertical{top:0;bottom:0;right:16%;width:48px;transition:transform .65s ease,opacity .45s ease}
+.ribbon-bow{position:absolute;z-index:8;right:calc(16% - 42px);top:48%;width:132px;height:105px;padding:0;border-radius:0;background:transparent;box-shadow:none;transform:translateY(-50%);overflow:visible}.ribbon-bow:hover:not(:disabled){transform:translateY(-50%) scale(1.04);box-shadow:none}.ribbon-bow i{display:block}.bow-loop{position:absolute;top:13px;width:55px;height:40px;border:11px solid #b95e70;border-radius:55% 45% 55% 45%}.bow-left{left:7px;transform:rotate(18deg)}.bow-right{right:7px;transform:scaleX(-1) rotate(18deg)}.bow-knot{position:absolute;z-index:3;left:50%;top:29px;width:28px;height:25px;transform:translateX(-50%) rotate(4deg);border-radius:50%;background:#a94f61}.bow-tail{position:absolute;top:47px;width:24px;height:47px;background:#b95e70;clip-path:polygon(0 0,100% 0,84% 100%,50% 82%,16% 100%)}.tail-left{left:42px;transform:rotate(11deg)}.tail-right{right:41px;transform:rotate(-10deg)}.ribbon-bow b{position:absolute;left:50%;top:101px;transform:translateX(-50%);white-space:nowrap;font-family:Georgia,serif;font-size:.72rem;font-style:italic;font-weight:normal;color:#8d5360}
+.scrapbook-intro.opening .ribbon-vertical{transform:translateX(160px) rotate(5deg);opacity:0}.scrapbook-intro.opening .ribbon-bow{animation:scrapbookBowAway .72s ease forwards}.scrapbook-intro.cover-opening .scrapbook-cover{animation:scrapbookCoverOpen .95s cubic-bezier(.3,.65,.25,1) forwards}
+@keyframes scrapbookBowAway{0%{transform:translateY(-50%) rotate(0) scale(1);opacity:1}55%{transform:translate(55px,-56%) rotate(12deg) scale(.92);opacity:.9}100%{transform:translate(190px,-42%) rotate(24deg) scale(.75);opacity:0}}
+@keyframes scrapbookCoverOpen{0%{transform:rotateY(0)}65%{transform:rotateY(-112deg)}100%{transform:rotateY(-152deg)}}
+.story-wrapper{perspective:2400px}.open-book-spiral{position:absolute;z-index:90;top:12px;left:50%;width:52px;height:836px;transform:translateX(-50%);display:flex;flex-direction:column;justify-content:space-around;pointer-events:none}.open-book-spiral span{width:50px;height:15px;display:block;border:3px solid #918983;border-radius:50%;box-shadow:0 2px 2px rgba(56,40,34,.17),inset 0 1px rgba(255,255,255,.55)}
+.book-navigation{position:relative;z-index:100}
+@media(max-width:850px){.closed-scrapbook{width:min(560px,82vw);height:min(700px,76vh)}.open-book-spiral{height:636px;width:42px}.open-book-spiral span{width:40px}}
+
+
+/* =========================================================
+   PORTRAIT SPIRAL BOOK — ONE PAGE AT A TIME
+   FINAL OVERRIDE: keep this block LAST.
+========================================================= */
+
+/* The open scrapbook has the same portrait proportions as the cover. */
+.story-wrapper {
+    width: min(650px, 82vw) !important;
+    margin: 0 auto !important;
+    perspective: 2400px !important;
+}
+
+/* Every chapter remains in its original wrapper so all #chapterN
+   styling continues to work, but the wrapper is now one portrait book. */
+.book-spread,
+.book-spread.active {
+    width: min(650px, 82vw) !important;
+    height: min(790px, 82vh) !important;
+    min-height: 700px !important;
+    position: relative !important;
+    display: none !important;
+    border-radius: 10px 18px 18px 10px !important;
+    background: #fbf5ea !important;
+    overflow: visible !important;
+    transform: none !important;
+    animation: none !important;
+    box-shadow:
+        0 28px 55px rgba(72,39,37,.25),
+        0 7px 18px rgba(72,39,37,.14) !important;
+}
+
+.book-spread.active {
+    display: block !important;
+}
+
+/* Remove the old middle fold. */
+.book::after {
+    display: none !important;
+}
+
+/* Only ONE physical page is visible. */
+.book-page {
+    display: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    inset: 0 !important;
+    padding: 46px 58px 54px 72px !important;
+    border-radius: 10px 18px 18px 10px !important;
+    background: #fbf5ea !important;
+    overflow: hidden !important;
+    transform: none;
+    animation: none !important;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow:
+        inset 18px 0 24px -24px rgba(70,45,35,.45),
+        inset -10px 0 18px -22px rgba(70,45,35,.28);
+}
+
+.book-page.current-page,
+.book-page.turning-page {
+    display: block !important;
+}
+
+/* Old left/right page assumptions must not change the portrait sheet. */
+.book-page.left-page,
+.book-page.right-page {
+    width: 100% !important;
+    border-radius: 10px 18px 18px 10px !important;
+}
+
+/* All page numbers now live at the bottom-right of the single portrait page. */
+.book-page .page-number,
+.book-page.left-page .page-number,
+.book-page.right-page .page-number,
+.book-page > .page-number,
+.book-page.left-page > .page-number,
+.book-page.right-page > .page-number {
+    left: auto !important;
+    right: 27px !important;
+    bottom: 20px !important;
+    text-align: right !important;
+}
+
+/* Fixed spiral down the LEFT edge, not in the middle. */
+.open-book-spiral {
+    top: 14px !important;
+    bottom: 14px !important;
+    left: -25px !important;
+    width: 52px !important;
+    height: auto !important;
+    transform: none !important;
+    z-index: 200 !important;
+}
+
+.open-book-spiral span {
+    width: 46px !important;
+    height: 18px !important;
+    border: 4px solid #8e8580 !important;
+    border-right-width: 5px !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    box-shadow: 0 2px 2px rgba(50,35,30,.18) !important;
+    transform: rotate(-5deg);
+}
+
+/* Hide spiral until the cover animation has finished. */
+.scrapbook-closed .open-book-spiral {
+    opacity: 0;
+}
+
+.scrapbook-open .open-book-spiral {
+    opacity: .96;
+}
+
+/* Navigation belongs below the portrait book. */
+.book-navigation {
+    margin-top: 22px !important;
+    min-height: 48px !important;
+    position: relative !important;
+    z-index: 300 !important;
+}
+
+#pageIndicator {
+    min-width: 48px !important;
+}
+
+/* Disable every old spread-level turn animation. */
+.book-spread.page-turn-next-out,
+.book-spread.page-turn-next-in,
+.book-spread.page-turn-prev-out,
+.book-spread.page-turn-prev-in,
+.book-spread.turn-next-out,
+.book-spread.turn-next-in,
+.book-spread.turn-prev-out,
+.book-spread.turn-prev-in {
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* The CURRENT SHEET alone flips around the left spiral edge. */
+.book-page.flip-next-out {
+    display: block !important;
+    z-index: 30 !important;
+    transform-origin: left center !important;
+    animation: portraitPageNext .82s cubic-bezier(.45,.05,.2,1) forwards !important;
+}
+
+.book-page.flip-prev-out {
+    display: block !important;
+    z-index: 30 !important;
+    transform-origin: left center !important;
+    animation: portraitPagePrev .82s cubic-bezier(.45,.05,.2,1) forwards !important;
+}
+
+.book-page.reveal-page {
+    display: block !important;
+    z-index: 10 !important;
+    animation: portraitReveal .25s ease both !important;
+}
+
+@keyframes portraitPageNext {
+    0% {
+        transform: perspective(2200px) rotateY(0deg);
+        opacity: 1;
+        filter: brightness(1);
+        box-shadow: 12px 5px 22px rgba(60,40,35,.10);
+    }
+    45% {
+        transform: perspective(2200px) rotateY(-78deg);
+        opacity: .98;
+        filter: brightness(.91);
+        box-shadow: 34px 8px 38px rgba(60,40,35,.22);
+    }
+    100% {
+        transform: perspective(2200px) rotateY(-178deg);
+        opacity: 0;
+        filter: brightness(.78);
+        box-shadow: 45px 10px 48px rgba(60,40,35,.16);
+    }
+}
+
+@keyframes portraitPagePrev {
+    0% {
+        transform: perspective(2200px) rotateY(-178deg);
+        opacity: 0;
+        filter: brightness(.80);
+    }
+    45% {
+        transform: perspective(2200px) rotateY(-78deg);
+        opacity: .98;
+        filter: brightness(.92);
+        box-shadow: 34px 8px 38px rgba(60,40,35,.22);
+    }
+    100% {
+        transform: perspective(2200px) rotateY(0deg);
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+@keyframes portraitReveal {
+    from { opacity: .82; }
+    to   { opacity: 1; }
+}
+
+/* The old active-page entrance animations must not fight the sheet flip. */
+.book-spread.active .left-page,
+.book-spread.active .right-page,
+.book-spread.active .left-page .page-content,
+.book-spread.active .right-page .chapter-right-content {
+    animation: none !important;
+}
+
+/* Keep page content readable in portrait mode. */
+.book-page .page-content,
+.book-page .chapter-right-content {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+/* On shorter laptop screens, scale the physical scrapbook as one object
+   rather than turning it back into a landscape spread. */
+@media (min-width: 900px) and (max-height: 900px) {
+    .story-wrapper {
+        width: min(600px, 76vw) !important;
+    }
+
+    .book-spread,
+    .book-spread.active {
+        width: min(600px, 76vw) !important;
+        height: 850px !important;
+        min-height: 850px !important;
+    }
+
+    .book-page {
+        padding: 38px 50px 50px 66px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .story-wrapper {
+        width: min(560px, 88vw) !important;
+    }
+
+    .book-spread,
+    .book-spread.active {
+        width: min(560px, 88vw) !important;
+        height: min(720px, 78vh) !important;
+        min-height: 620px !important;
+    }
+
+    .book-page {
+        padding: 34px 30px 46px 54px !important;
+    }
+
+    .open-book-spiral {
+        left: -20px !important;
+        width: 42px !important;
+    }
+
+    .open-book-spiral span {
+        width: 40px !important;
+        height: 15px !important;
+        border-width: 3px !important;
+    }
+}
+/* =========================================================
+   PORTRAIT BOOK — EXTRA HEIGHT
+========================================================= */
+
+.book-spread,
+.book-spread.active {
+    height: min(900px, 90vh) !important;
+    min-height: 850px !important;
+}
+/* =========================================================
+   SPIRAL POSITION FIX
+   Half on the page + half outside, like the cover
+========================================================= */
+
+.open-book-spiral {
+    left: 18px !important;
+    width: 52px !important;
+    transform: translateX(-50%) !important;
+
+    top: 14px !important;
+    bottom: 14px !important;
+    height: auto !important;
+
+    z-index: 200 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+
+    pointer-events: none !important;
+}
+
+.open-book-spiral span {
+    width: 46px !important;
+    height: 18px !important;
+
+    border: 4px solid #8e8580 !important;
+    border-right-width: 5px !important;
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    box-shadow:
+        0 2px 2px rgba(50, 35, 30, 0.18) !important;
+
+    transform: rotate(-5deg) !important;
+}
+/* =========================================================
+   FINAL SPIRAL BINDING POSITION
+   Match open pages to the closed cover
+========================================================= */
+
+.open-book-spiral {
+    left: 0 !important;
+    transform: translateX(-50%) !important;
+
+    top: -2px !important;
+    bottom: 30px !important;
+    height: auto !important;
+
+    width: 52px !important;
+
+    z-index: 500 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+
+    pointer-events: none !important;
+}
+
+
+.open-book-spiral span {
+    width: 46px !important;
+    height: 18px !important;
+
+    border: 4px solid #8e8580 !important;
+    border-right-width: 5px !important;
+
+    border-radius: 50% !important;
+
+    background: transparent !important;
+
+    box-shadow:
+        0 2px 2px rgba(50, 35, 30, 0.18) !important;
+
+    transform: rotate(-5deg) !important;
+}
+/* Remove the final spiral ring */
+.open-book-spiral span:last-child {
+    display: none !important;
+}
+/* FINAL OPEN-BOOK SPIRAL FIX */
+.open-book-spiral {
+    top: -2px !important;
+    bottom: 72px !important;
+}
+
+.open-book-spiral span:last-child {
+    display: none !important;
+}
+/* =========================================================
+   BACK TO COVER BUTTON
+========================================================= */
+
+.back-link {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+
+    color: #5b4540 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 14px !important;
+}
+
+.back-link:hover {
+    color: #b45d70 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+/* =========================================================
+   COVER SUBTITLE + OPEN INSTRUCTION
+========================================================= */
+
+.cover-subtitle {
+    display: block;
+    margin-top: 3px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+
+    color: #9a746d;
+}
+
+
+.open-hint {
+    margin-top: 28px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-style: italic;
+
+    color: #a95c6d;
+
+    letter-spacing: 0.3px;
+
+    animation: openHintPulse 1.8s ease-in-out infinite;
+}
+
+
+@keyframes openHintPulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+}
+/* =========================================================
+   BOW — LIGHTER SO IT STANDS OUT FROM THE RIBBON
+========================================================= */
+
+.bow-loop {
+    border-color: #e8a1ad !important;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(92, 48, 57, 0.22));
+}
+
+.bow-knot {
+    background: #d97f90 !important;
+
+    box-shadow:
+        inset 0 2px 4px rgba(255, 255, 255, 0.35),
+        0 2px 5px rgba(92, 48, 57, 0.22) !important;
+}
+
+.bow-tail {
+    background: #e8a1ad !important;
+}
+
+
+/* =========================================================
+   CLEAN PHYSICAL PAGE FLIP — FINAL
+   Works with script.js: flip-host / turning-page / reveal-page
+========================================================= */
+
+/* During a flip, the two chapter wrappers occupy the same book position. */
+.book-spread.flip-host {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* The page underneath must actually be visible while the top sheet turns. */
+.book-page.reveal-page,
+.book-page.page-underneath {
+    display: block !important;
+    opacity: 1 !important;
+    transform: perspective(2200px) rotateY(0deg) !important;
+    z-index: 10 !important;
+}
+
+/* The moving sheet sits above the revealed page. */
+.book-page.turning-page {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 80 !important;
+    transform-origin: left center !important;
+    transform-style: preserve-3d !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    will-change: transform, opacity, filter, box-shadow;
+}
+
+.book-page.turning-page.flip-next-out {
+    animation: scrapbookPageNext .9s cubic-bezier(.42,.05,.18,1) forwards !important;
+}
+
+.book-page.flip-prev-start {
+    display: block !important;
+    transform: perspective(2200px) rotateY(-179deg) !important;
+    opacity: 0 !important;
+}
+
+.book-page.turning-page.flip-prev-out {
+    animation: scrapbookPagePrevious .9s cubic-bezier(.42,.05,.18,1) forwards !important;
+}
+
+@keyframes scrapbookPageNext {
+    0% {
+        transform: perspective(2200px) rotateY(0deg);
+        opacity: 1;
+        filter: brightness(1);
+        box-shadow: 8px 2px 15px rgba(60,40,35,.08);
+    }
+    30% {
+        transform: perspective(2200px) rotateY(-45deg);
+        opacity: 1;
+        filter: brightness(.97);
+        box-shadow: 22px 5px 28px rgba(60,40,35,.16);
+    }
+    55% {
+        transform: perspective(2200px) rotateY(-92deg);
+        opacity: .98;
+        filter: brightness(.88);
+        box-shadow: 38px 8px 42px rgba(60,40,35,.25);
+    }
+    78% {
+        transform: perspective(2200px) rotateY(-142deg);
+        opacity: .88;
+        filter: brightness(.82);
+    }
+    100% {
+        transform: perspective(2200px) rotateY(-179deg);
+        opacity: 0;
+        filter: brightness(.76);
+    }
+}
+
+@keyframes scrapbookPagePrevious {
+    0% {
+        transform: perspective(2200px) rotateY(-179deg);
+        opacity: 0;
+        filter: brightness(.76);
+    }
+    22% {
+        transform: perspective(2200px) rotateY(-142deg);
+        opacity: .88;
+        filter: brightness(.82);
+    }
+    45% {
+        transform: perspective(2200px) rotateY(-92deg);
+        opacity: .98;
+        filter: brightness(.88);
+        box-shadow: 38px 8px 42px rgba(60,40,35,.25);
+    }
+    70% {
+        transform: perspective(2200px) rotateY(-45deg);
+        opacity: 1;
+        filter: brightness(.97);
+    }
+    100% {
+        transform: perspective(2200px) rotateY(0deg);
+        opacity: 1;
+        filter: brightness(1);
+        box-shadow: 8px 2px 15px rgba(60,40,35,.08);
+    }
+}
+
+/* The spiral always stays above the moving paper. */
+.open-book-spiral {
+    z-index: 500 !important;
+}
+/* =========================================================
+   FINAL PAGE TURN DIRECTION
+   NEXT: RIGHT → LEFT
+   LEFT EDGE REMAINS ATTACHED TO SPIRAL
+========================================================= */
+
+.book-page.turning-page {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+
+    z-index: 100 !important;
+
+    transform-origin: left center !important;
+    transform-style: preserve-3d !important;
+
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+
+    will-change: transform;
+}
+
+
+/* PAGE UNDER THE TURNING SHEET */
+
+.book-page.page-underneath,
+.book-page.reveal-page {
+    display: block !important;
+    z-index: 5 !important;
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   RIGHT EDGE SWINGS TOWARD LEFT
+========================================================= */
+
+.book-page.turning-page.flip-next-out {
+    transform-origin: left center !important;
+
+    animation:
+        scrapbookNextPage
+        0.9s
+        cubic-bezier(.45,.05,.20,1)
+        forwards !important;
+}
+
+
+@keyframes scrapbookNextPage {
+
+    0% {
+        transform:
+            perspective(2200px)
+            rotateY(0deg);
+
+        opacity: 1;
+
+        filter: brightness(1);
+    }
+
+
+    25% {
+        transform:
+            perspective(2200px)
+            rotateY(-35deg);
+
+        opacity: 1;
+
+        filter: brightness(.98);
+
+        box-shadow:
+            18px 4px 24px
+            rgba(60,40,35,.14);
+    }
+
+
+    50% {
+        transform:
+            perspective(2200px)
+            rotateY(-85deg);
+
+        opacity: 1;
+
+        filter: brightness(.90);
+
+        box-shadow:
+            32px 6px 36px
+            rgba(60,40,35,.22);
+    }
+
+
+    75% {
+        transform:
+            perspective(2200px)
+            rotateY(-135deg);
+
+        opacity: .95;
+
+        filter: brightness(.84);
+    }
+
+
+    100% {
+        transform:
+            perspective(2200px)
+            rotateY(-179deg);
+
+        opacity: 0;
+
+        filter: brightness(.78);
+    }
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+
+   Reverse the SAME physical page turn.
+   The page comes back from the LEFT and settles to the RIGHT.
+========================================================= */
+
+.book-page.flip-prev-start {
+    display: block !important;
+
+    transform-origin: left center !important;
+
+    transform:
+        perspective(2200px)
+        rotateY(-179deg) !important;
+
+    opacity: 0 !important;
+}
+
+
+.book-page.turning-page.flip-prev-out {
+    transform-origin: left center !important;
+
+    animation:
+        scrapbookPreviousPage
+        0.9s
+        cubic-bezier(.45,.05,.20,1)
+        forwards !important;
+}
+
+
+@keyframes scrapbookPreviousPage {
+
+    0% {
+        transform:
+            perspective(2200px)
+            rotateY(-179deg);
+
+        opacity: 0;
+
+        filter: brightness(.78);
+    }
+
+
+    25% {
+        transform:
+            perspective(2200px)
+            rotateY(-135deg);
+
+        opacity: .95;
+
+        filter: brightness(.84);
+    }
+
+
+    50% {
+        transform:
+            perspective(2200px)
+            rotateY(-85deg);
+
+        opacity: 1;
+
+        filter: brightness(.90);
+
+        box-shadow:
+            32px 6px 36px
+            rgba(60,40,35,.22);
+    }
+
+
+    75% {
+        transform:
+            perspective(2200px)
+            rotateY(-35deg);
+
+        opacity: 1;
+
+        filter: brightness(.98);
+    }
+
+
+    100% {
+        transform:
+            perspective(2200px)
+            rotateY(0deg);
+
+        opacity: 1;
+
+        filter: brightness(1);
+    }
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   LEFT-PAGE / RIGHT-PAGE MUST NEVER CHANGE FLIP DIRECTION
+========================================================= */
+
+.book-page.left-page.turning-page,
+.book-page.right-page.turning-page,
+.book-page.left-page.flip-next-out,
+.book-page.right-page.flip-next-out,
+.book-page.left-page.flip-prev-out,
+.book-page.right-page.flip-prev-out {
+    transform-origin: left center !important;
+}
+
+
+/* SPIRAL ALWAYS ABOVE PAPER */
+
+.open-book-spiral {
+    z-index: 500 !important;
+}
+/* =========================================================
+   PAGE FLIP — PERFORMANCE / SMOOTHNESS FIX
+   Keeps the existing RIGHT → LEFT direction
+========================================================= */
+
+.book-page.turning-page {
+    transform-origin: left center !important;
+
+    /* Give the page its own GPU/compositing layer */
+    will-change: transform, opacity !important;
+
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+
+    transform-style: preserve-3d !important;
+
+    /* Prevent expensive repainting during the turn */
+    filter: none !important;
+}
+
+
+/* NEXT — RIGHT TO LEFT */
+
+.book-page.turning-page.flip-next-out {
+    animation:
+        smoothPageNext
+        0.72s
+        cubic-bezier(.4, 0, .2, 1)
+        forwards !important;
+}
+
+
+@keyframes smoothPageNext {
+
+    0% {
+        transform:
+            perspective(2400px)
+            rotateY(0deg);
+
+        opacity: 1;
+    }
+
+    30% {
+        transform:
+            perspective(2400px)
+            rotateY(-48deg);
+
+        opacity: 1;
+    }
+
+    60% {
+        transform:
+            perspective(2400px)
+            rotateY(-105deg);
+
+        opacity: .98;
+    }
+
+    82% {
+        transform:
+            perspective(2400px)
+            rotateY(-150deg);
+
+        opacity: .75;
+    }
+
+    100% {
+        transform:
+            perspective(2400px)
+            rotateY(-179deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* PREVIOUS — REVERSE OF SAME SHEET */
+
+.book-page.flip-prev-start {
+    transform-origin: left center !important;
+
+    transform:
+        perspective(2400px)
+        rotateY(-179deg) !important;
+
+    opacity: 0 !important;
+}
+
+
+.book-page.turning-page.flip-prev-out {
+    animation:
+        smoothPagePrevious
+        0.72s
+        cubic-bezier(.4, 0, .2, 1)
+        forwards !important;
+}
+
+
+@keyframes smoothPagePrevious {
+
+    0% {
+        transform:
+            perspective(2400px)
+            rotateY(-179deg);
+
+        opacity: 0;
+    }
+
+    18% {
+        transform:
+            perspective(2400px)
+            rotateY(-150deg);
+
+        opacity: .75;
+    }
+
+    40% {
+        transform:
+            perspective(2400px)
+            rotateY(-105deg);
+
+        opacity: .98;
+    }
+
+    70% {
+        transform:
+            perspective(2400px)
+            rotateY(-48deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            perspective(2400px)
+            rotateY(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* Page underneath stays completely still */
+
+.book-page.page-underneath,
+.book-page.reveal-page {
+    animation: none !important;
+
+    transform:
+        perspective(2400px)
+        rotateY(0deg) !important;
+
+    opacity: 1 !important;
+
+    filter: none !important;
+}
+
+
+/* Do not animate the content separately during a turn */
+
+.book-page.turning-page *,
+.book-page.page-underneath * {
+    animation-play-state: paused !important;
+}
+
+
+/* Keep the spiral completely independent */
+
+.open-book-spiral {
+    transform:
+        translateX(-50%)
+        translateZ(0) !important;
+
+    backface-visibility: hidden !important;
+}
+/* =========================================================
+   TEMPORARY PAPER PAGE TURN — FINAL
+   Real scrapbook stays flat.
+========================================================= */
+
+
+/* Real pages NEVER rotate anymore */
+
+.book-page.current-page {
+    display: block !important;
+
+    transform: none !important;
+    animation: none !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   TEMPORARY COPY OF THE PAPER
+========================================================= */
+
+.page-flip-clone {
+    display: block !important;
+
+    position: absolute !important;
+
+    margin: 0 !important;
+
+    z-index: 450 !important;
+
+    pointer-events: none !important;
+
+    transform-origin: left center !important;
+
+    transform-style: preserve-3d !important;
+
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+
+    will-change: transform, opacity !important;
+
+    /*
+       Important:
+       prevent old .left-page / .right-page animation rules
+       from animating the clone.
+    */
+
+    animation: none !important;
+}
+
+
+/* Nothing INSIDE the copied page gets its own animation */
+
+.page-flip-clone *,
+.page-flip-clone .page-content,
+.page-flip-clone .chapter-right-content {
+    animation: none !important;
+}
+
+
+/* =========================================================
+   NEXT
+   FREE RIGHT EDGE MOVES RIGHT → LEFT
+========================================================= */
+
+.page-flip-clone.clone-turn-next {
+    animation:
+        clonePageNext
+        0.78s
+        cubic-bezier(.45, .05, .20, 1)
+        forwards !important;
+}
+
+
+@keyframes clonePageNext {
+
+    0% {
+        transform:
+            perspective(2600px)
+            rotateY(0deg);
+
+        opacity: 1;
+    }
+
+    28% {
+        transform:
+            perspective(2600px)
+            rotateY(-42deg);
+
+        opacity: 1;
+    }
+
+    55% {
+        transform:
+            perspective(2600px)
+            rotateY(-92deg);
+
+        opacity: .98;
+    }
+
+    78% {
+        transform:
+            perspective(2600px)
+            rotateY(-142deg);
+
+        opacity: .82;
+    }
+
+    100% {
+        transform:
+            perspective(2600px)
+            rotateY(-179deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   PREVIOUS
+   SAME SHEET RETURNS TO THE RIGHT
+========================================================= */
+
+.page-flip-clone.clone-prev-start {
+    transform:
+        perspective(2600px)
+        rotateY(-179deg);
+
+    opacity: 0;
+}
+
+
+.page-flip-clone.clone-prev-start.clone-turn-prev {
+    animation:
+        clonePagePrevious
+        0.78s
+        cubic-bezier(.45, .05, .20, 1)
+        forwards !important;
+}
+
+
+@keyframes clonePagePrevious {
+
+    0% {
+        transform:
+            perspective(2600px)
+            rotateY(-179deg);
+
+        opacity: 0;
+    }
+
+    22% {
+        transform:
+            perspective(2600px)
+            rotateY(-142deg);
+
+        opacity: .82;
+    }
+
+    45% {
+        transform:
+            perspective(2600px)
+            rotateY(-92deg);
+
+        opacity: .98;
+    }
+
+    72% {
+        transform:
+            perspective(2600px)
+            rotateY(-42deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            perspective(2600px)
+            rotateY(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   SPIRAL ALWAYS ABOVE THE TURNING PAPER
+========================================================= */
+
+.open-book-spiral {
+    z-index: 500 !important;
+}
+/* =========================================================
+   FLIP CLONE — PRESERVE CHAPTER PHOTO LAYOUTS
+========================================================= */
+
+.flip-clone-spread {
+    display: block !important;
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    pointer-events: none !important;
+
+    z-index: 440 !important;
+}
+
+.flip-clone-spread .page-flip-clone {
+    display: block !important;
+
+    position: absolute !important;
+
+    z-index: 450 !important;
+
+    pointer-events: none !important;
+}
