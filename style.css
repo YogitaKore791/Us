@@ -7937,3 +7937,64 @@ button:disabled {
 
     filter: none !important;
 }
+/* =========================================================
+   LARGER SCRAPBOOK PHOTOS
+   Page 11 intentionally excluded
+========================================================= */
+
+/* General scrapbook Polaroids */
+.scrapbook-photo:not(#chapter6 .scrapbook-photo) {
+    scale: 1.10;
+}
+
+/* Chapter 2 screenshots */
+#chapter2 .mini-screenshot,
+#chapter2 .daily-chat-placeholder {
+    scale: 1.08;
+}
+
+/* Chapter 4 photos */
+#chapter4 .chapter4-small-photo,
+#chapter4 .chapter4-photo {
+    scale: 1.10;
+}
+
+/* Chapter 5 */
+#chapter5 .chapter5-night-photo {
+    scale: 1.12;
+}
+
+/* PAGE 11 — DO NOT CHANGE */
+#chapter6 .left-page .chapter6-big-photo {
+    scale: 1 !important;
+}
+
+/* Page 12 only */
+#chapter6 .right-page .chapter6-hero-photo,
+#chapter6 .right-page .chapter6-little-photo {
+    scale: 1.10;
+}
+
+/* Chapter 7 */
+#chapter7 .chapter7-moving-photo,
+#chapter7 .chapter7-main-photo {
+    scale: 1.12;
+}
+
+/* Chapter 8 */
+#chapter8 .chapter8-photo,
+#chapter8 .chapter8-hero-photo,
+#chapter8 .chapter8-small-photo {
+    scale: 1.10;
+}
+
+/* Chapter 9 */
+#chapter9 .chapter9-photo,
+#chapter9 .chapter9-home-photo {
+    scale: 1.10;
+}
+
+/* Chapter 10 */
+#chapter10 .chapter10-future-photo {
+    scale: 1.12;
+}
