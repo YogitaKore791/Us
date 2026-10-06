@@ -7938,63 +7938,257 @@ button:disabled {
     filter: none !important;
 }
 /* =========================================================
-   LARGER SCRAPBOOK PHOTOS
-   Page 11 intentionally excluded
+   SELECTIVE PHOTO SIZE UPDATE — FINAL
+   Enlarges ONLY the pages requested from the screenshots.
+   Page 11 is intentionally untouched.
+   Keep this block LAST in the stylesheet.
 ========================================================= */
 
-/* General scrapbook Polaroids */
-.scrapbook-photo:not(#chapter6 .scrapbook-photo) {
-    scale: 1.10;
+/* ---------- PAGE 2 — Unibuddy screenshot ---------- */
+#chapter1 .right-page .scrapbook-photo.portrait-photo {
+    width: 330px !important;
+    height: 365px !important;
+    margin: 4px auto 10px !important;
 }
 
-/* Chapter 2 screenshots */
-#chapter2 .mini-screenshot,
-#chapter2 .daily-chat-placeholder {
-    scale: 1.08;
+#chapter1 .right-page .unibuddy-screenshot {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
 }
 
-/* Chapter 4 photos */
-#chapter4 .chapter4-small-photo,
-#chapter4 .chapter4-photo {
-    scale: 1.10;
+/* ---------- PAGE 3 — two first-meeting images ---------- */
+#chapter2 .left-page .mini-photo-row {
+    gap: 24px !important;
+    margin: 14px auto 10px !important;
 }
 
-/* Chapter 5 */
-#chapter5 .chapter5-night-photo {
-    scale: 1.12;
+#chapter2 .left-page .mini-screenshot:first-child {
+    width: 210px !important;
+    height: 280px !important;
 }
 
-/* PAGE 11 — DO NOT CHANGE */
-#chapter6 .left-page .chapter6-big-photo {
-    scale: 1 !important;
+#chapter2 .left-page .mini-screenshot.second-mini {
+    width: 250px !important;
+    height: 215px !important;
 }
 
-/* Page 12 only */
-#chapter6 .right-page .chapter6-hero-photo,
-#chapter6 .right-page .chapter6-little-photo {
-    scale: 1.10;
+#chapter2 .left-page .chapter2-mini-image {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
 }
 
-/* Chapter 7 */
-#chapter7 .chapter7-moving-photo,
-#chapter7 .chapter7-main-photo {
-    scale: 1.12;
+#chapter2 .left-page .mini-screenshot:first-child .chapter2-mini-image {
+    object-fit: contain !important;
 }
 
-/* Chapter 8 */
-#chapter8 .chapter8-photo,
-#chapter8 .chapter8-hero-photo,
-#chapter8 .chapter8-small-photo {
-    scale: 1.10;
+#chapter2 .left-page .second-mini .chapter2-mini-image {
+    object-fit: cover !important;
+    object-position: center !important;
 }
 
-/* Chapter 9 */
-#chapter9 .chapter9-photo,
-#chapter9 .chapter9-home-photo {
-    scale: 1.10;
+/* ---------- PAGE 4 — daily chat screenshot ---------- */
+#chapter2 .right-page .daily-chat-placeholder {
+    width: 285px !important;
+    height: 245px !important;
+    margin: 12px auto 14px !important;
 }
 
-/* Chapter 10 */
-#chapter10 .chapter10-future-photo {
-    scale: 1.12;
+#chapter2 .right-page .chapter2-daily-chat-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 5 — pav bhaji ---------- */
+#chapter3 .left-page .chapter3-pav-photo {
+    width: 285px !important;
+    height: 205px !important;
+    margin: 12px auto 7px !important;
+}
+
+#chapter3 .left-page .chapter3-pav-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 7 — Killiney ---------- */
+#chapter4 .left-page .chapter4-small-photo {
+    width: 300px !important;
+    height: 220px !important;
+    margin: 20px auto 0 !important;
+}
+
+#chapter4 .left-page .chapter4-small-photo-inner {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#chapter4 .left-page .chapter4-small-photo img,
+#chapter4 .left-page .chapter4-killiney-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 8 — Temple Bar + Sandymount ---------- */
+#chapter4 .right-page .chapter4-temple-photo-inner {
+    width: 255px !important;
+    height: 205px !important;
+}
+
+#chapter4 .right-page .chapter4-beach-photo-inner {
+    width: 175px !important;
+    height: 145px !important;
+}
+
+#chapter4 .right-page .chapter4-temple-photo img,
+#chapter4 .right-page .chapter4-beach-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 11 ----------
+   Intentionally NO overrides here.
+   Existing Page 11 photo sizes remain exactly as they were.
+---------------------------------------------------------- */
+
+/* ---------- PAGE 13 — moving day ---------- */
+#chapter7 .left-page .chapter7-moving-photo {
+    width: 210px !important;
+    height: 165px !important;
+}
+
+#chapter7 .left-page .chapter7-moving-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 14 — Hyderabad Kitchen ---------- */
+#chapter7 .right-page .chapter7-main-photo {
+    width: 285px !important;
+    height: 215px !important;
+    margin: 10px auto 12px !important;
+}
+
+#chapter7 .right-page .chapter7-main-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 15 — date + drinks ---------- */
+#chapter8 .left-page .chapter8-photo {
+    width: 215px !important;
+    height: 185px !important;
+}
+
+#chapter8 .left-page .chapter8-real-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 16 — couple + friends ---------- */
+#chapter8 .right-page .chapter8-hero-photo {
+    width: 285px !important;
+    height: 215px !important;
+    margin: 10px auto 12px !important;
+}
+
+#chapter8 .right-page .chapter8-small-photo {
+    width: 210px !important;
+    height: 150px !important;
+}
+
+#chapter8 .right-page .chapter8-hero-image,
+#chapter8 .right-page .chapter8-friends-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 17 — Cork collage ---------- */
+#chapter9 .left-page .chapter9-cork-collage {
+    width: 510px !important;
+    height: 305px !important;
+    margin: 20px auto 16px !important;
+}
+
+#chapter9 .left-page .cork-photo-one {
+    width: 225px !important;
+    height: 175px !important;
+    left: 18px !important;
+    top: 0 !important;
+}
+
+#chapter9 .left-page .cork-photo-two {
+    width: 225px !important;
+    height: 175px !important;
+    right: 18px !important;
+    top: 0 !important;
+}
+
+#chapter9 .left-page .cork-photo-three {
+    width: 230px !important;
+    height: 160px !important;
+    left: 140px !important;
+    top: 135px !important;
+}
+
+#chapter9 .left-page .chapter9-cork-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 18 — little home memory ---------- */
+#chapter9 .right-page .chapter9-home-photo {
+    width: 285px !important;
+    height: 215px !important;
+    margin: 10px auto 14px !important;
+}
+
+#chapter9 .right-page .chapter9-home-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ---------- PAGE 19 — favourite photo ---------- */
+#chapter10 .left-page .chapter10-future-photo {
+    width: 280px !important;
+    height: 215px !important;
+    margin: 12px auto 14px !important;
+}
+
+#chapter10 .left-page .chapter10-future-photo img,
+#chapter10 .left-page .chapter10-future-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+/* Keep enlarged images rendered normally. */
+.book-page img {
+    image-rendering: auto !important;
+    filter: none !important;
 }
