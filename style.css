@@ -7925,3 +7925,15 @@ button:disabled {
 
     pointer-events: none !important;
 }
+/* =========================================================
+   IMAGE QUALITY FIX
+========================================================= */
+
+.book-page img {
+    image-rendering: auto !important;
+
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+
+    filter: none !important;
+}
