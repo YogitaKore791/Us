@@ -8192,3 +8192,56 @@ button:disabled {
     image-rendering: auto !important;
     filter: none !important;
 }
+
+/* =========================================================
+   FINAL IMAGE RENDERING + COLLAGE CORRECTION
+   Keep this block LAST.
+   Prevents extra CSS zooming of real images and keeps the
+   Page 17 group photo centred between the two upper photos.
+========================================================= */
+
+/* Let the browser use its normal high-quality resampling. */
+.book-page img {
+    image-rendering: auto !important;
+    filter: none !important;
+    max-width: 100%;
+}
+
+/* Do not zoom the actual bitmap inside any enlarged frame. */
+#chapter1 .unibuddy-screenshot,
+#chapter2 .chapter2-mini-image,
+#chapter2 .chapter2-daily-chat-image,
+#chapter3 .chapter3-pav-image,
+#chapter4 .chapter4-killiney-image,
+#chapter4 .chapter4-temple-photo img,
+#chapter4 .chapter4-beach-photo img,
+#chapter7 .chapter7-moving-image,
+#chapter7 .chapter7-main-image,
+#chapter8 .chapter8-real-photo,
+#chapter8 .chapter8-hero-image,
+#chapter8 .chapter8-friends-image,
+#chapter9 .chapter9-cork-image,
+#chapter9 .chapter9-home-image,
+#chapter10 .chapter10-future-image,
+#chapter10 .chapter10-future-photo img {
+    transform: none !important;
+}
+
+/* Screenshots contain text, so never crop/zoom them. */
+#chapter1 .unibuddy-screenshot,
+#chapter2 .mini-screenshot:first-child .chapter2-mini-image,
+#chapter2 .chapter2-daily-chat-image {
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Page 17 — centre the group photo between the two top photos. */
+#chapter9 .left-page .cork-photo-three {
+    width: 230px !important;
+    height: 160px !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 135px !important;
+    transform: translateX(-50%) rotate(1deg) !important;
+    z-index: 5 !important;
+}
